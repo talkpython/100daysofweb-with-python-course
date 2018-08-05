@@ -1,5 +1,2 @@
-# 100daysofweb-with-python-course
-PRIVATE materials for our course
+# 100 Days of web with Python
 
-
-Hi guys! Let me put some structure in here and then we can start contributing. -- Michael
