@@ -4,19 +4,6 @@ from services import weather_service, sun_service, location_service
 blueprint = flask.blueprints.Blueprint(__name__, __name__)
 
 
-@blueprint.route('/api/events/<city>/<state>/<country>', methods=['GET'])
-def events(city: str, state: str, country: str):
-    player = {
-        "name": "Jeff the player",
-        "city": city,
-        "state": state,
-        "country": country,
-    }
-    if not player:
-        flask.abort(404)
-    return flask.jsonify(player)
-
-
 @blueprint.route('/api/weather/<zip_code>/<country>', methods=['GET'])
 def weather(zip_code: str, country: str):
     weather_data = weather_service.get_current(zip_code, country)

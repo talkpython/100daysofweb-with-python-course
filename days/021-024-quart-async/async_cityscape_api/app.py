@@ -7,7 +7,7 @@ import services.sun_service
 import services.location_service
 
 app = flask.Flask(__name__)
-is_debug = False
+is_debug = True
 
 app.register_blueprint(home.blueprint)
 app.register_blueprint(city_api.blueprint)
