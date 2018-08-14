@@ -108,3 +108,6 @@ misc.xml
 modules.xml
 workspace.xml
 async_cityscape_api.iml
+days/033-036-sqlalchemy-orm/demo/hovershare_app_final/.idea/hovershare_app_final.iml
+days/033-036-sqlalchemy-orm/demo/hovershare_app_final/.idea/vcs.xml
+hovershare_app_starter.iml
