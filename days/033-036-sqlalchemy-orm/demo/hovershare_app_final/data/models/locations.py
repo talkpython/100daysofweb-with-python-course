@@ -19,5 +19,4 @@ class Location(SqlAlchemyBase):
 
     max_storage = sqlalchemy.Column(sqlalchemy.Integer, index=True)
 
-    # noinspection PyUnresolvedReferences
-    # scooters = orm.relation("Scooter", back_populates='location')
+    scooters = orm.relation('Scooter', back_populates='location')

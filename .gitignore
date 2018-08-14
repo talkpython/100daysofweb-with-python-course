@@ -111,3 +111,8 @@ async_cityscape_api.iml
 days/033-036-sqlalchemy-orm/demo/hovershare_app_final/.idea/hovershare_app_final.iml
 days/033-036-sqlalchemy-orm/demo/hovershare_app_final/.idea/vcs.xml
 hovershare_app_starter.iml
+dataSources.local.xml
+days/033-036-sqlalchemy-orm/demo/hovershare_app_final/.idea/dataSources/2917fd74-e5af-4af5-8ce4-874420797c8c.xml
+days/033-036-sqlalchemy-orm/demo/hovershare_app_final/.idea/dataSources/2917fd74-e5af-4af5-8ce4-874420797c8c/storage_v2/_src_/schema/main.uQUzAA.meta
+hover_share.sqlite
+dataSources.xml
