@@ -1,6 +1,6 @@
 # Days 21-24 Async Flask apps with Quart
 
-Now you have seen the videos from this chapter, you're ready to build your first async Python application. This is a fun one and a skill most Python enthusiasts never develop!
+You're ready to build your first async Python application. This is a fun one and a skill most Python enthusiasts never develop!
 
 ## Day 1: Watch the video lessons
 
