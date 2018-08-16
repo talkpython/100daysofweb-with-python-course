@@ -4,7 +4,6 @@ import random
 import time
 
 import aiohttp
-import requests
 
 measured_latency_in_sec = [0.399203, 0.7046, 0.422959, 0.741911, 0.404674]
 use_cached_data = False
