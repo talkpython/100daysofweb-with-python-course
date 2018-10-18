@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+  <table class="mui-table mui-table--bordered">
+    <thead>
+        <tr>
+          <th>Quote</th>
+          <th>Author</th>
+          <th>Added</th>
+          <th colspan="2">Edit Quote</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- for class based views rename this queryset to quote_list -->
+        {% for quote in quotes %}
+        <tr>
+          <td><a href="{% url "quotes:quote_detail" quote.id %}">{{ quote.quote }}</a></td>
+          <td>{{ quote.author }}</td>
+          <td>{{ quote.added|timesince }} ago</td>
+          <td><a class="mui-bDeleted mui-btn--small mui-btn--flat mui-btn--primary" href="{% url "quotes:quote_edit" quote.id %}">Edit</a></td>
+          <td><a class="mui-btn mui-btn--small mui-btn--flat mui-btn--danger" href="{% url "quotes:quote_delete" quote.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="mui-container">
+    <a class="mui-btn mui-btn--primary" href="{% url "quotes:quote_new" %}">Add a quote</a>
+  </div>
+
+{% endblock %}
