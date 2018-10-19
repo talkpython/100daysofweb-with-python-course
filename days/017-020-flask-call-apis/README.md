@@ -16,7 +16,7 @@ You have a couple of options for Day 2.
 
 - If you didn't manage to follow along with the videos on Day 1, now's the time to do so.
 - Add a Chuck Menu Bar button to your base Flask template.
-- Time permitting, check out this awesome list of APIs you can play with. Choose an API (other than Chuck Norris and Pokemon!) and see if practice pulling static data and printing it on your web page.
+- Time permitting, check out this [awesome list of APIs](https://medium.com/@vicbergquist/18-fun-apis-for-your-next-project-8008841c7be9) you can play with. Choose an API (other than Chuck Norris and Pokemon!) and see if practice pulling static data and printing it on your web page.
 
 
 ## Day 3: 
