@@ -16,7 +16,7 @@ You have a couple of options for Day 2.
 
 - If you didn't manage to follow along with the videos on Day 1, now's the time to do so.
 - Add a Chuck Menu Bar button to your base Flask template.
-- Time permitting, check out this [awesome list of APIs](https://medium.com/@vicbergquist/18-fun-apis-for-your-next-project-8008841c7be9) you can play with. Choose an API (other than Chuck Norris and Pokemon!) and see if practice pulling static data and printing it on your web page.
+- Time permitting, check out this [awesome list of APIs](https://medium.com/@vicbergquist/18-fun-apis-for-your-next-project-8008841c7be9) you can play with. Choose an API (other than Chuck Norris and Pokemon!), practice pulling static data and printing it on your web page.
 
 
 ## Day 3: 
@@ -24,14 +24,15 @@ You have a couple of options for Day 2.
 For Day 3, watch the remaining videos: 7-12. These will use the [Pokemon API](https://pokeapi.co/) to cover the basics of Flask forms, POSTing data back to your Flask app, parsing the JSON return from the API and more.
 It's a big one so if it spills into Day 4 don't worry!
 
+
 ## Day 4:
 
 For the final day:
 
 - Continue building the app if you didn't complete it on Day 3.
-- Add in some error handling on the user input. Eg: In the current state, entering a number will break the app.
-- Check out the rest of the [Pokemon API endpoints](https://pokeapi.co/docs/v2.html) and tes printing other types of Pokemon data.
-- If you're feeling *really* brave, on our existing app of printing the names of a Pokemon of a specific colour, have the app return more than just the Pokemon name. Eg: the "Nature", the "Form", the "Habitat" etc.
+- Add in some error handling on the user input. Eg: Right now, entering a number will break the app - account for this scenario.
+- Check out the rest of the [Pokemon API endpoints](https://pokeapi.co/docs/v2.html) and test printing other types of Pokemon data.
+- If you're feeling *really* brave: on our existing app (printing the names of a Pokemon of a specific colour), have the app return more than just the Pokemon name. Eg: the "Nature", the "Form", the "Habitat"..
 
 
 ### Time to share what you've accomplished!
