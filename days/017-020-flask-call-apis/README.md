@@ -30,7 +30,7 @@ It's a big one so if it spills into Day 4 don't worry!
 For the final day:
 
 - Continue building the app if you didn't complete it on Day 3.
-- Add in some error handling on the user input. Eg: Right now, entering a number will break the app - account for this scenario.
+- Add in some error handling on the user input. Eg: Right now, entering a number or an invalid colour (not in the API) will break the app - account for these scenarios.
 - Check out the rest of the [Pokemon API endpoints](https://pokeapi.co/docs/v2.html) and test printing other types of Pokemon data.
 - If you're feeling *really* brave: on our existing app (printing the names of a Pokemon of a specific colour), have the app return more than just the Pokemon name. Eg: the "Nature", the "Form", the "Habitat"..
 
