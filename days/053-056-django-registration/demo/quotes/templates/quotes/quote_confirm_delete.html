@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1 class="mui--text-display1">Confirm Delete Quote</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <blockquote>{{ quote.quote }}</blockquote>
+    <p>Are you sure you want to delete this quote?</p>
+    <input class="mui-btn mui-btn--danger" type="submit" value="Delete" />
+    <a class="mui-btn mui-btn--raised" href="{% url "quotes:quote_list" %}">Go Back</a>
+  </form>
+
+{% endblock %}
