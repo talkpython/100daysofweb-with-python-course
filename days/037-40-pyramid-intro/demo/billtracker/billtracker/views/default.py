@@ -1,13 +1,14 @@
+from pyramid.request import Request
 from pyramid.view import view_config
+
+from billtracker.data import repository
 
 
 @view_config(route_name='home', renderer='../templates/home/default.pt')
-def home(request):
-    # access the db or web services
-    return {
-        'project': 'Bill Tracker Pro Demo',
-        'items': [
-            'item1', 'item2', 'item3', 'item4'
-        ]
+def home(_: Request):
+    user_id = 1  # probably get from a cookie?
 
+    user = repository.get_user_by_id(user_id)
+    return {
+        'user': user,
     }

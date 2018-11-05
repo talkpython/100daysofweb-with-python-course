@@ -1,16 +1,26 @@
 <div metal:use-macro="load: ../shared/layout.pt">
     <div metal:fill-slot="content">
         <div class="content">
-            <h1><span class="font-semi-bold">Pyramid</span> <span class="smaller">Starter project</span></h1>
-            <p class="lead">Welcome to <span class="font-normal">${project}</span>, a&nbsp;Pyramid
-                application generated&nbsp;by<br><span class="font-normal">Cookiecutter</span>.</p>
+            <h1>Bill Tracker Pro Demo</h1>
 
-            <p>Your items</p>
-            <ol>
-                <li tal:repeat="i items">
-                   ${i} is an item.
-                </li>
-            </ol>
+            <div>
+                Welcome ${user.name}. You currently owe
+                    ${"${:,.0f}".format(user.total_owed)}
+            </div>
+
+            <div>
+                <h2>Unpaid bills</h2>
+                <div tal:repeat="b user.open_bills">
+                    ${b.description} with ${"${:,.0f}".format(b.total - b.paid)} pending.
+                </div>
+            </div>
+
+            <div>
+                <h2>Paid bills</h2>
+                <div tal:repeat="b user.paid_bills">
+                    ${b.description} paid off at ${"${:,.0f}".format(b.total)}.
+                </div>
+            </div>
 
         </div>
 
