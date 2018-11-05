@@ -6,7 +6,7 @@ from billtracker.bin import load_base_data
 from billtracker.data.db_session import DbSession
 
 
-def main(global_config, **settings):
+def main(_, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     with Configurator(settings=settings) as config:
