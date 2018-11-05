@@ -1,4 +1,4 @@
-<div metal:use-macro="load: layout.pt">
+<div metal:use-macro="load: ../shared/layout.pt">
     <div metal:fill-slot="content">
 
         <div class="content">

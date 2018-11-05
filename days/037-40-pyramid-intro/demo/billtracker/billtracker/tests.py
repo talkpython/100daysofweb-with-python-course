@@ -11,9 +11,9 @@ class ViewTests(unittest.TestCase):
         testing.tearDown()
 
     def test_my_view(self):
-        from .views.default import my_view
+        from .views.default import home
         request = testing.DummyRequest()
-        info = my_view(request)
+        info = home(request)
         self.assertEqual(info['project'], 'Bill Tracker Pro')
 
 
