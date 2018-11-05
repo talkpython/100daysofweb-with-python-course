@@ -121,3 +121,8 @@ footer a:hover {
     color: red;
     font-weight: bold;
 }
+
+form > * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
