@@ -1,3 +1,4 @@
+from pyramid.httpexceptions import HTTPFound
 from pyramid.request import Request
 from pyramid.response import Response
 from pyramid.view import view_config
@@ -38,9 +39,25 @@ def details_get(request: Request):
              renderer='../templates/home/details.pt',
              request_method='POST')
 def details_post(request: Request):
-    user_id = 1  # probably get from a cookie?
+    bill_id = int(request.matchdict.get('bill_id'))
+    bill = repository.get_bill_by_id(bill_id)
+    if not bill:
+        return Response(status=404)
 
+    user_id = 1  # probably get from a cookie?
     user = repository.get_user_by_id(user_id)
-    return {
-        'user': user,
-    }
+
+    amount = int(request.POST.get('amount', -1))
+    if amount < 0 or amount > bill.total-bill.paid:
+        error = 'Your amount must be more the zero and less than what you owe.'
+
+        return {
+            'user': user,
+            'bill': bill,
+            'error': error,
+            'amount': amount
+        }
+
+    repository.add_payment(amount, bill_id)
+
+    return HTTPFound(location='/bill/{}'.format(bill_id))
