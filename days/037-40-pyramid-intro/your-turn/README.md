@@ -34,7 +34,7 @@ $ cookiecutter https://github.com/Pylons/pyramid-cookiecutter-starter
 
 Then answer the questions from the template according to the app idea you chose. Remember to use Chameleon for your template language if you want to follow as close as possible.
 
-Add all the routes with corresponding view methods and HTML templates for them. Don't worry about making these pretty.
+Add all the routes with corresponding view methods and HTML templates for them. Don't worry about making these pretty. Also don't implement the data exchange or proper HTML in those templates. Save that for day 4.
 
 Finally, add the SQLAlchemy data model. I recommend you simply copy the `db`, `data`, and `bin` folders from my demo code and adjust the imports and data classes accordingly. Don't forget to call the global init function in your `__init__.py` for the app startup.
 
