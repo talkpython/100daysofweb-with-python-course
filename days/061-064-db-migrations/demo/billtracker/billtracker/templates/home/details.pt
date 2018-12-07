@@ -1,0 +1,87 @@
+<div metal:use-macro="load: ../shared/layout.pt">
+    <div metal:fill-slot="content">
+
+
+        <div id="bill-header">
+            <h1><span class="font-semi-bold">Bill Details</span></h1>
+        </div>
+
+
+        <div class="container">
+            <div class="row back">
+                <div class="col-md-12">
+                    <a href="/" class="btn-sm btn btn-default"> ↩ Back</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <div class="content">
+                        <p class="lead">Bill for <span class="font-normal">${bill.description}</span>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2">
+                    Date created
+                </div>
+                <div class="col-md-7">
+                    <strong>${bill.created_date.date().isoformat()}</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2">
+                    Total amount
+                </div>
+                <div class="col-md-7">
+                    <strong>${'${:,.0f}'.format(bill.total)}</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2">
+                    Amount owed
+                </div>
+                <div class="col-md-7">
+                    <strong>${'${:,.0f}'.format(max(bill.total-bill.paid,0))}</strong>
+                </div>
+            </div>
+
+
+
+            <div class="row" tal:condition="bill.total > bill.paid">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+
+                    <h2>Make a payment</h2>
+                    <form action="" method="POST">
+                        <input type="text" value="${'' if not error else amount}" placeholder=" $0.00" name="amount" class="form-control">
+                        <button type="submit" class="btn btn-success">Pay now</button>
+                    </form>
+
+                    <div class="error" tal:condition="error">
+                        ${error}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="eop">&nbsp;</div>
+
+
+
+    </div>
+</div>
