@@ -14,6 +14,8 @@ class Bill(SqlAlchemyBase):
     last_payment = sqlalchemy.Column(sqlalchemy.DateTime, index=True, nullable=True)
     total = sqlalchemy.Column(sqlalchemy.Float, default=0, index=True)
 
+    other = sqlalchemy.Column(sqlalchemy.Float, default=0.0)
+
     # User's relationship
     user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('users.id'))
     user = orm.relation('User', back_populates='bills')
