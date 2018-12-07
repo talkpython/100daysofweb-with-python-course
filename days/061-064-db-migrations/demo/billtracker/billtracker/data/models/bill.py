@@ -11,6 +11,7 @@ class Bill(SqlAlchemyBase):
     created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now, index=True)
     description = sqlalchemy.Column(sqlalchemy.String, nullable=False)
     paid = sqlalchemy.Column(sqlalchemy.Float, default=0, index=True)
+    last_payment = sqlalchemy.Column(sqlalchemy.DateTime, index=True, nullable=True)
     total = sqlalchemy.Column(sqlalchemy.Float, default=0, index=True)
 
     # User's relationship
