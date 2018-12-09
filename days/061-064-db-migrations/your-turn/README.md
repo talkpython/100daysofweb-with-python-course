@@ -1,48 +1,138 @@
 # Days 61 - 64 Database migrations with Alembic
 
-Now you have seen the videos from this chapter, you're ready to build a Pyramid-based web application. The actual app you build should be something fun but also not too big and challenging. Build something with just a few pages and then go from there.
-
-That's why I found a list of simple web app ideas you can use for your first sample app in this chapter. Check out this blog post's simple app ideas. There are many and I'm sure you'll find one that is somewhat appealing to you.
-
-[**flaviocopes.com/sample-app-ideas**](https://flaviocopes.com/sample-app-ideas/#simple-apps)
-
-Look through that list and pick one you think you can tackle in a couple of hours.
+Now you have seen the videos from this chapter, you're ready to evolve your database schema using Alembic. In this your-turn, you'll jump back to the original app we built when introducing SQLAlchemy, our Hovershare scooter sharing app.
 
 ## Day 1-2: Watch the video lessons
 
-The first half of this 4-day block is to watch the videos. You can think of this chapter as paying it forward for the next two chapters with Michael. The videos were a little longer than normal but you'll earn that time back later in the course.
+The first half of this 4-day block is to watch the videos. Feel free to play around with the sample code and other projects while going through the videos.
 
-## Day 3: Create your website and routes
+## Day 3: Install and configure alembic
 
-It's time to come back to your web app you picked in the beginning of this section. Make a short list of the pages / urls needed to make the site work. For each page, add the basic data items needed as well.
+Much of the code you will work with in this your-turn will have already been written and you have seen before. After all, migrations are about going from an existing db schema to another.
 
-Use mockaroo to generate test data if you want realistic sample data: **[mockaroo.com](https://www.mockaroo.com)**
+We will start with a copy of the hovershare app. You'll find it in a folder next to this `readme.md` in `hovershare`.
 
-Then it's time to create your project using Cookiecutter. I recommend the starter template, but you can choose whichever one you want.
+First thing is to get this app running. Here are the quick steps for that.
 
-The basic steps are to install cookiecutter (and make sure it's in your path):
+1. Open a terminal / command prompt in that folder. **Make SURE** that your working directory is the `hovershare_project` folder. This will matter for subsequent commands.
+2. Create a virtual environment and activate it
+3. [Optional] Upgrade pip and setup tools: `pip install -U pip setuptools`
+4. Install the requirements: `pip install -r hovershare/requirements.txt`
+5. Run the program (to verify this all worked). You should see something like:
+
+```python
+$ python program.py
+
+Enter a command, [r]ent, [a]vailable, [l]ocate, [h]istory, e[X]it: h
+********* Your rental history ********* 
+ * 2018-12-08 Hover-1 1st edition
+ * 2018-12-07 Hover-1 1st edition
+ * 2018-12-07 Hover-1 Sport 2nd edition
+ * 2018-10-23 Hover-1 Sport 2nd edition
+ * 2018-09-11 Hover-1 Sport 3nd edition
+```
+
+Now that you have the project all setup and running. Configure it in your favorite editor and make sure it still works.
+
+Look through the code, especially notice the SQLAlchemy base class and the various SQLAlchemy model classes in `hovershare.data.models`.
+
+## Day 4: Install alembic and add two migrations
+
+With everything tee'd up, let's dig into alembic. You need to begin by **getting alembic by adding it to your `requirements.txt` file** and rerunning the install command.
 
 ```
-pip3 install --user --upgrade cookiecutter
+pip install -r hovershare/requirements.txt
 ```
 
-Then run the template in the directory where you want the project created:
+The you will "install" alembic for your project by running the command:
 
 ```
-$ cookiecutter https://github.com/Pylons/pyramid-cookiecutter-starter
+alembic init alembic
+``` 
+
+Look over your new files and folders alembic created to see what you have to work with.
+
+Your project structure should look like this (directories only shown):
+
+```
+hovershare_project
+│
+├── alembic
+│   └── versions
+└── hovershare
+    ├── data
+    │   └── models
+    ├── db
+    ├── infrastructure
+    └── services
 ```
 
-Then answer the questions from the template according to the app idea you chose. Remember to use Chameleon for your template language if you want to follow as close as possible.
+To have alembic automatically detect migrations, you'll need to do two things.
 
-Add all the routes with corresponding view methods and HTML templates for them. Don't worry about making these pretty. Also don't implement the data exchange or proper HTML in those templates. Save that for day 4.
+1. Register the SQLAlchemy db connection string in `alembic.ini >  sqlalchemy.url` 
+2. Import all the models and set the `target_metadata = SqlAlchemyBase.metadata`.
 
-Finally, add the SQLAlchemy data model. I recommend you simply copy the `db`, `data`, and `bin` folders from my demo code and adjust the imports and data classes accordingly. Don't forget to call the global init function in your `__init__.py` for the app startup.
+This is **harder** than it sounds. When we did this in the videos from our Pyramid web app, all we had to do was:
 
-If you are using mockaroo data, then edit the import behavior in the module from the `bin` folder.
+```
+from billtracker.data.models import *
+from billtracker.data.modelbase import SqlAlchemyBase
+```
 
-## Day 4: Start using your data model and add a little design
+However, this worked because `billtracker` is a package (that's how Pyramid rolls). But this hovershare app is just a bunch of loose files that work together as modules. So it won't work out of the box here.
 
-You should have imported data and basic page structure from day 3. Now you can write the queries and return the data to the templates to make your site go. If you have extra time, give it a little CSS magic and grab an image from [unsplash](https://unsplash.com/) and / or [The noun project](https://thenounproject.com/)
+The fix is add the `data` folder manually to the PYTHON_PATH used by the import feature of Python. If you have the structure shown above (you should if you are following along), then your `env.py` file should have these elements in it:
+
+```python
+# alembic/env.py
+import os
+
+# Add the data folder to the path
+folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'hovershare'))
+print("Adding " + folder + " to python path for Alembic.")
+sys.path.insert(0, folder)
+
+# noinspection PyUnresolvedReferences
+import data.__all_models
+# noinspection PyUnresolvedReferences
+from data.sqlalchemybase import SqlAlchemyBase
+
+# ...
+
+target_metadata = SqlAlchemyBase.metadata
+```
+
+Test that things are working by simply asking Alembic for the current status of the DB:
+
+```
+$ alembic current  
+```
+
+That should run without crashing. :)
+
+Now you'll make a change to your SQLAlchemy model, see it fail to run, then fix the error by migrating the DB schema with alembic.
+
+Add a column to `Location`. This can really be whatever you want. If you want an example, we could add a postal code column which is a string.
+
+Try running your app again. It should fail:
+
+```
+sqlalchemy.exc.OperationalError: no such column: locations.postal_code
+```
+
+Time to migrate the DB. Create a revision with the following command (adjusting the comment of course).
+
+```
+$ alembic revision --autogenerate -m "add postal column"
+```
+
+Then apply it to our DB
+
+```
+$ alembic upgrade head
+```
+
+You should see a message about adding the column and a new file in `alembic/versions`. Try the app once more. It should be migrated and running.
 
 ### Time to share what you've accomplished!
 
