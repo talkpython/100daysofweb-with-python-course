@@ -1,0 +1,3 @@
+[run]
+source = billtracker
+omit = billtracker/test*
