@@ -20,7 +20,7 @@ First thing is to get this app running. Here are the quick steps for that.
 4. Install the requirements: `pip install -r hovershare/requirements.txt`
 5. Run the program (to verify this all worked). You should see something like:
 
-```python
+```
 $ python program.py
 
 Enter a command, [r]ent, [a]vailable, [l]ocate, [h]istory, e[X]it: h
