@@ -21,7 +21,7 @@ First thing is to get this app running. Here are the quick steps for that.
 5. Run the program (to verify this all worked). You should see something like:
 
 ```
-$ python program.py
+(venv) $ python program.py
 
 Enter a command, [r]ent, [a]vailable, [l]ocate, [h]istory, e[X]it: h
 ********* Your rental history ********* 
@@ -41,13 +41,13 @@ Look through the code, especially notice the SQLAlchemy base class and the vario
 With everything tee'd up, let's dig into alembic. You need to begin by **getting alembic by adding it to your `requirements.txt` file** and rerunning the install command.
 
 ```
-pip install -r hovershare/requirements.txt
+(venv) $ pip install -r hovershare/requirements.txt
 ```
 
 The you will "install" alembic for your project by running the command:
 
 ```
-alembic init alembic
+(venv) $ alembic init alembic
 ``` 
 
 Look over your new files and folders alembic created to see what you have to work with.
@@ -105,7 +105,7 @@ target_metadata = SqlAlchemyBase.metadata
 Test that things are working by simply asking Alembic for the current status of the DB:
 
 ```
-$ alembic current  
+(venv) $ alembic current
 ```
 
 That should run without crashing. :)
@@ -123,13 +123,13 @@ sqlalchemy.exc.OperationalError: no such column: locations.postal_code
 Time to migrate the DB. Create a revision with the following command (adjusting the comment of course).
 
 ```
-$ alembic revision --autogenerate -m "add postal column"
+(venv) $ alembic revision --autogenerate -m "add postal column"
 ```
 
 Then apply it to our DB
 
 ```
-$ alembic upgrade head
+(venv) $ alembic upgrade head
 ```
 
 You should see a message about adding the column and a new file in `alembic/versions`. Try the app once more. It should be migrated and running.
