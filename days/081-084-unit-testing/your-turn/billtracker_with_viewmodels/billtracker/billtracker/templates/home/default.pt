@@ -1,0 +1,83 @@
+<div metal:use-macro="load: ../shared/layout.pt">
+    <div metal:fill-slot="content">
+
+        <div id="hero">
+            <h1><span class="font-semi-bold">Bill Tracker Pro</span> <span class="smaller">Demo</span></h1>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <div class="content">
+                        <p class="lead">Hi <span class="font-normal">${user.name}</span>.
+                            Welcome to <span class="font-normal">Bill Tracker Pro Demo Site</span>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <h2>Unpaid bills (total: ${"${:,.0f}".format(user.total_owed)})</h2>
+                </div>
+            </div>
+
+            <div class="row grid-entry">
+                <div class="col-md-2 filler"></div>
+                <div class="col-md-1"><strong>Date</strong></div>
+                <div class="col-md-1 amount"><strong>Total</strong></div>
+                <div class="col-md-1 amount"><strong>Still owe</strong></div>
+                <div class="col-md-1">
+                    <strong>Category</strong>
+                </div>
+                <div class="col-md-6 filler"></div>
+            </div>
+            <div class="row grid-entry" tal:repeat="b user.open_bills">
+                <div class="col-md-2 filler"></div>
+                <div class="col-md-1 values">${b.created_date.date().isoformat()}</div>
+                <div class="col-md-1 amount values">${"${:,.0f}".format(b.total)}</div>
+                <div class="col-md-1 amount values">${"${:,.0f}".format(b.total-b.paid)}</div>
+                <div class="col-md-1 values">
+                        ${b.description}
+                </div>
+                <div class="col-md-2 values">
+                    <a href="/bill/${b.id}" class="btn btn-success btn-sm">Make payment</a>
+                </div>
+                <div class="col-md-4 filler"></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <h2>Past bills (total: ${"${:,.0f}".format(user.total_paid_off)})</h2>
+                </div>
+            </div>
+            <div class="row grid-entry">
+                <div class="col-md-2 filler"></div>
+                <div class="col-md-1"><strong>Date</strong></div>
+                <div class="col-md-1 amount"><strong>Total</strong></div>
+                <div class="col-md-2">
+                    <strong>Category</strong>
+                </div>
+                <div class="col-md-6 filler"></div>
+            </div>
+            <div class="row grid-entry" tal:repeat="b user.paid_bills">
+                <div class="col-md-2 filler"></div>
+                <div class="col-md-1 values">${b.created_date.date().isoformat()}</div>
+                <div class="col-md-1 amount values">${"${:,.0f}".format(b.total)}</div>
+                <div class="col-md-2 values">
+                        ${b.description}
+                </div>
+                <div class="col-md-6 filler"></div>
+            </div>
+
+        </div>
+
+        <div id="eop"> &nbsp;</div>
+
+    </div>
+</div>
