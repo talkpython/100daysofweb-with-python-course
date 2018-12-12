@@ -9,12 +9,20 @@ class BillDetailsViewModel(ViewModelBase):
     def __init__(self, request: Request, user_id: int):
         super().__init__(request)
 
-        self.bill_id = int(request.matchdict.get('bill_id'))
+        self.bill_id = int(request.matchdict.get('bill_id', -1))
         self.bill = repository.get_bill_by_id(self.bill_id)
 
         self.user_id = user_id
         self.user = repository.get_user_by_id(user_id)
         self.amount = None
+
+        if not self.user:
+            self.error = "No user with ID {}".format(user_id)
+        elif not self.bill:
+            self.error = "The bill with ID {} was not found".format(self.bill_id)
+        elif self.user.id != self.bill.user_id:
+            self.error = "The bill does not belong to user"
+            self.bill = None
 
     def from_form(self):
         try:

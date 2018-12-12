@@ -14,6 +14,7 @@
       <w>pytest</w>
       <w>sqlalchemy</w>
       <w>tablename</w>
+      <w>viewmodel</w>
     </words>
   </dictionary>
 </component>
