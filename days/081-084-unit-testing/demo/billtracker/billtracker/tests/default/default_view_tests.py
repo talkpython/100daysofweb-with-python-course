@@ -8,7 +8,7 @@ from billtracker.data.models.bill import Bill
 from billtracker.data.models.users import User
 
 
-class ViewModelTests(unittest.TestCase):
+class ViewTests(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
 
