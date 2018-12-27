@@ -10,7 +10,7 @@ server {
         gzip_buffers    8 256k;
         uwsgi_buffers   8 256k;
 
-        alias /webapps/app_repo/days/081-084-unit-testing/demo/billtracker/billtracker/static;
+        alias /webapps/app_repo/days/089-092-deployment/demo/billtracker/billtracker/static;
         expires 365d;
     }
     location / {
