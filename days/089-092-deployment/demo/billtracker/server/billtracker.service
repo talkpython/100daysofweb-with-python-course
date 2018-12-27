@@ -1,0 +1,15 @@
+[Unit]
+Description=uWSGI Bill Tracker server instance
+After=syslog.target
+
+[Service]
+ExecStart=/webapps/venv/bin/uwsgi -H /webapps/venv --ini-paste /webapps/app_repo/days/089-092-deployment/demo/billtracker/production.ini
+RuntimeDirectory=/webapps/app_repo/days/089-092-deployment/demo/billtracker/
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

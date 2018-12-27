@@ -1,0 +1,32 @@
+server {
+    listen 80;
+    server_name billtrackerprodemo.com
+    server_tokens off;
+    charset utf-8;
+    client_max_body_size 150M;
+
+    location /static {
+        gzip            on;
+        gzip_buffers    8 256k;
+        uwsgi_buffers   8 256k;
+
+        alias /webapps/app_repo/days/081-084-unit-testing/demo/billtracker/billtracker/static;
+        expires 365d;
+    }
+    location / {
+        try_files $uri @yourapplication;
+    }
+    location @yourapplication {
+        include uwsgi_params;
+
+        gzip            on;
+        gzip_buffers    8 256k;
+        uwsgi_buffers   8 256k;
+        uwsgi_read_timeout 300;
+
+        proxy_pass http://127.0.0.1:9055;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Protocol $scheme;
+    }
+}
