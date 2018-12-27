@@ -9,7 +9,6 @@ plaster-pastedeploy
 Pygments
 pyramid
 pyramid-chameleon
-pyramid-debugtoolbar
 pyramid-mako
 python-dateutil
 python-editor
