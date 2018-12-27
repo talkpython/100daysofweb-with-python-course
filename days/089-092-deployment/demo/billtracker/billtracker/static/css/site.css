@@ -1,0 +1,128 @@
+body {
+    color: #aaa;
+    background-color: #777;
+}
+
+#main-content {
+    color: black;
+    background-color: white;
+}
+
+a {
+    color: dodgerblue;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+footer {
+    text-align: center;
+    padding-top: 50px;
+    line-height: 2.5em;
+    font-size: 16px;
+}
+
+footer a {
+    color: black;
+    margin: 10px;
+}
+
+footer a:hover {
+    color: dodgerblue;
+}
+
+#hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: white url(/static/img/finance.png) no-repeat center center;
+    background-size: cover;
+    min-height: 400px;
+}
+
+#hero h1 {
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.41);
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 3em;
+}
+
+.content {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.paid {
+    background-color: #bef0ba;
+}
+
+.owe {
+    background-color: #f0adae;
+}
+
+#eop {
+    margin-top: 50px;
+}
+
+.amount {
+    text-align: right;
+}
+
+.row.grid-entry > div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 40px;
+}
+
+.row.grid-entry:hover > .values {
+    background-color: #eee;
+}
+
+.row.grid-entry:hover .filler {
+    background-color: white;
+}
+
+
+
+#bill-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: white url(/static/img/finance.png) no-repeat center center;
+    background-size: cover;
+    min-height: 200px;
+}
+
+#bill-header h1 {
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.41);
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 3em;
+}
+
+.back  {
+    padding: 20px;
+}
+
+.details {
+    line-height: 2em;
+}
+
+.details form > * {
+    margin: 5px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+form > * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
