@@ -1,4 +1,8 @@
 import unittest
+from typing import List
+
+from billtracker.data import repository
+from billtracker.data.models.bill import Bill
 
 
 class SiteTests(unittest.TestCase):
@@ -14,11 +18,16 @@ class SiteTests(unittest.TestCase):
         self.assertTrue(b'Unpaid bills' in res.body)
 
     def test_sitemap(self):
+        # Update the way we find the bills for this user.
+        # Turns out the ID varies depending on how you populate
+        # the DB.
         urls = [
-            '/',
-            '/bill/386',
-            '/bill/351',
+            '/'
         ]
+        user = repository.get_user_by_id(1)
+        bills: List[Bill] = user.bills
+        for b in bills:
+            urls.append('/bill/{}'.format(b.id))
 
         for url in urls:
             self.app.get(url, status=200)

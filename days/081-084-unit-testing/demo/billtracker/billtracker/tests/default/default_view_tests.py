@@ -34,7 +34,7 @@ class ViewTests(unittest.TestCase):
         self.assertIsNotNone(info['user'])
 
     def test_details_get(self):
-        from views.default import details_get
+        from billtracker.views.default import details_get
 
         request: Request = testing.DummyRequest()
         user_id = 72
