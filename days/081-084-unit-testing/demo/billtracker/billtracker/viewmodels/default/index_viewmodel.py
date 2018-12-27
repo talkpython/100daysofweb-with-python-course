@@ -1,7 +1,7 @@
 from pyramid.request import Request
 
 from billtracker.data import repository
-from viewmodels.viewmodelbase import ViewModelBase
+from billtracker.viewmodels.viewmodelbase import ViewModelBase
 
 
 class IndexViewModel(ViewModelBase):
