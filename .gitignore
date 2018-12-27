@@ -143,3 +143,6 @@ Project_Default.xml
 days/089-092-deployment/demo/billtracker/.idea/billtracker.iml
 days/089-092-deployment/demo/billtracker/.idea/encodings.xml
 days/089-092-deployment/demo/billtracker/.idea/vcs.xml
+days/089-092-deployment/demo/billtracker/.idea/.name
+days/089-092-deployment/demo/billtracker/.idea/deploy billtracker.iml
+days/089-092-deployment/demo/billtracker/.idea/webResources.xml
