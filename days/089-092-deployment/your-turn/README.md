@@ -27,21 +27,22 @@ $ sudo apt upgrade
 $ sudo reboot
 ```
 
-You'll need to use SSH to access the server most likely. One macOS and Linux, ssh is built in. On Windows, you have a few options.
+You'll need to use SSH to access the server most likely. On macOS, Windows, and Linux, `ssh` is built in. On Windows, you have a few options.
 
 * Use cmd.net. This is an awesome command prompt replacement: **[cmder.net](http://cmder.net/)**
 * Use PowerShell: This is built into Windows and has SSH capabilities
-* Use putty: This one has been around awhile too -- [https://www.chiark.greenend.org.uk/~sgtatham/putty/](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
 
 ## Day 3: Get your site running under uWSGI
 
 ### Software dependencies
 
-Once you server is setup and you've logged in successfully, you'll want to install the necessary software dependencies to run Python 3 and uWSGI.
+Once your server is setup and you've logged in successfully, you'll want to install the necessary software dependencies to run Python 3 and uWSGI.
 
 You can use the script I used during the demos to guide you through this. You can find the script in the `server` folder here:
 
-[https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/089-092-deployment/demo/billtracker/server](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/089-092-deployment/demo/billtracker/server). Here they are for your convenience:
+[https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/089-092-deployment/demo/billtracker/server](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/089-092-deployment/demo/billtracker/server). 
+
+Here are the relevant commands for your convenience:
 
 ```bash
 # Install some OS dependencies:
@@ -72,7 +73,7 @@ Run through the commands one at a time to see what they do. Of course, substitut
 
 ### Source code for the web app
 
-Once the server is ready to run Python 3, you'll need to get your on the server. Here you will need to decide what code to publish! If you are feeling adventurous, pick one of the apps you've created throughout this course and get it online. 
+Once the server is ready to run Python 3, you'll need to get your source code on the server. Here you will need to decide what code to publish! If you are feeling adventurous, pick one of the apps you've created throughout this course and get it online. 
 
 If you'd rather play it safe the first time around, we've included a working copy of bill tracker here:
 
@@ -120,6 +121,12 @@ If you deployed bill tracker, you can test it with the command:
 ```
 (venv) $ cd /webapps/app_repo/days/089-092-deployment/demo/billtracker/
 (venv) $ pserve development.ini 
+```
+
+In a new terminal, you can log in and try to hit the site:
+
+```
+(venv) $ http http://localhost:6543/
 ```
 
 ### Running under uWSGI
@@ -171,13 +178,13 @@ $ service nginx restart
 
 Be sure to review the contents of `billtracker.nginx` to make sure you understand what it does.
 
-Now it's the moment of truth. Try to access the service:
+Now is the moment of truth. Try to access the service:
 
 ```
 (venv) $ http localhost
 ```
 
-If you see your HTML source, you've done it! If not, start looking at the error messages and logs. They are usually found in `/var/log` or `/var/log/nginx`.
+If you see your HTML source, you've done it! If not, start looking at the error messages and logs. They are usually found in `/var/log` or `/var/log/nginx` for nginx and `/webapps/logs/billtracker/uwsgi.log` for uWSGI.
 
 Finally, try to access the site from outside the server in your browser. Just type the ip address into the address bar of your browser and you should see your site if all is well!
 
