@@ -14,7 +14,8 @@ Where to host your server? If you use the links below, you'll get a small or med
 
 1. **Digital Ocean**: Use [**pythonbytes.fm/digitalocean**](https://pythonbytes.fm/digitalocean) and get $100 credit for new accounts
 2. **Linode**: Use [**talkpython.fm/linode**](https://talkpython.fm/linode) and get $20 credit (all users I believe)
-3. Amazon Lightsail: [**aws.amazon.com/lightsail**](https://aws.amazon.com/lightsail/)
+3. **Amazon Lightsail**: [**aws.amazon.com/lightsail**](https://aws.amazon.com/lightsail/)
+4. **Local VM**: If you use something like VMWare, Parallels, or VirtualBox, you can just create a local Ubuntu if you'd rather
 
 If you decide to use EC2 directly, remember they put a firewall in front of your server which blocks port 80 be default. You'll have to allow that in the EC2 console in addition to anything you do in Ubuntu.
 
