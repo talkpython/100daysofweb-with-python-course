@@ -101,7 +101,7 @@ class HomeViewTests(unittest.TestCase):
 
 Implement a few view tests (the cases laid out above would be good ones) for the views in our stater app.
 
-## Day 4: View tests
+## Day 4: Functional (end to end) tests
 
 Final day is to do some functional tests. We'll leave it up to you on what you should test, but here is an example of a functional test. Keep in mind this IS using the database and the rest of the full web app to run the tests so may make changes over repeated runs.
 
