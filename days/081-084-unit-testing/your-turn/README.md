@@ -6,7 +6,7 @@ In this your-turn, you'll jump back to the original app we built part way throug
 
 The first day of this 4-day block is to watch the videos. Feel free to play around with the sample code and other projects while going through the videos. There is a lot of content here but we want to spend one day per type of test for the remaining three days so try to get through it in one here.
 
-## Day 2: Test the viewmodels with `unittest` and `mock.patch` 
+## Day 2: Test the view models with `unittest` and `mock.patch` 
 
 Begin by loading and configuring the project in:
 
@@ -21,7 +21,7 @@ This is the Pyramid web project as it was immediately before we started adding t
 3. Setup the project for development: `python setup.py develop`
 4. Run it to see it's working well: `pserve development.ini`
 
-Now that you have the site up and running, it's time to organize your tests and add the view model tests. Having a single `tests.py` file is a good start but is no where near enough. Create a tests folder, within there, a default folder. Put two test files in there, one for `index_viewmodel` and one for `bill_details_viewmodel` viewmodels.
+Now that you have the site up and running, it's time to organize your tests and add the view model tests. Having a single `tests.py` file is a good start but is no where near enough. Create a tests folder, within there, a default folder. Put two test files in there, one for `index_viewmodel` and one for `bill_details_viewmodel` view models.
 
 Write a couple of tests for each view model. Here is a rough example of what that might look like.
 
@@ -54,7 +54,7 @@ Remember that without the `mock.patch`, we would have to setup the database and 
 
 ## Day 3: View tests
 
-Now that you have done the viewmodel tests, you are close to done with the view tests already. After all, they mostly just use the viewmodels for their magic. 
+Now that you have done the view model tests, you are close to done with the view tests already. After all, they mostly just use the view models for their magic. 
 
 But there are things to validate in the views. For example:
 
@@ -97,7 +97,7 @@ Implement a few view tests (the cases laid out above would be good ones) for the
 
 Final day is to do some functional tests. We'll leave it up to you on what you should test, but here is an example of a functional test. Keep in mind this IS using the database and the rest of the full web app to run the tests so may make changes over repeated runs.
 
-Don't forget to install webtest if it's not already installed (`pip install webtest`).
+Don't forget to install `webtest` if it's not already installed (`pip install webtest`).
 
 ```
 # An example of a functional web test
@@ -123,5 +123,3 @@ Be sure to share your last couple of days work on Twitter or Facebook. Use the h
 Here are [some examples](https://twitter.com/search?q=%23100DaysOfCode) to inspire you. Consider including [@talkpython](https://twitter.com/talkpython) and [@pybites](https://twitter.com/pybites) in your tweets.
 
 *See a mistake in these instructions? Please [submit a new issue](https://github.com/talkpython/100daysofweb-with-python-course/issues) or fix it and [submit a PR](https://github.com/talkpython/100daysofweb-with-python-course/pulls).*
-
-
