@@ -25,29 +25,31 @@ Now that you have the site up and running, it's time to organize your tests and 
 
 Write a couple of tests for each view model. Here is a rough example of what that might look like.
 
-```
-class HomeViewModelTests(unittest.TestCase):
+```python
+class ViewModelTests(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
 
     def tearDown(self):
         testing.tearDown()
 
-    def test_index_vm(self):
+    def test_index_viewmodel(self):
+        # AAA's
+
         # Arrange
         request: Request = testing.DummyRequest()
-
-        mock_user = User()
-        mock_user.id = 74
+        test_user = User()
+        test_user.id = 1
+        test_user.bills = [Bill(), Bill(), Bill()]
 
         # Act
-        with unittest.mock.patch('bill_tracker_pro.data.repository.get_user_by_id', return_value=mock_user):
-            vm = IndexViewModel(request, mock_user.id)
-            
+        with unittest.mock.patch('billtracker.data.repository.get_user_by_id',
+                                 return_value=test_user):
+            vm = IndexViewModel(request, user_id=1)
+
         # Assert
-        self.assertIsNotNone(vm.user)
         self.assertIsNone(vm.error)
-        self.assertEqual(vm.user.id, mock_user.id)
+        self.assertIsNotNone(vm.user)
 ```
 
 Remember that without the `mock.patch`, we would have to setup the database and use it during testing (not a great idea).
@@ -73,19 +75,25 @@ class HomeViewTests(unittest.TestCase):
         testing.tearDown()
 
     def test_details_get(self):
-        from views.home import index
+        from billtracker.views.default import details_get
 
         request: Request = testing.DummyRequest()
         user_id = 72
-        request.matchdict['bill_id'] = user_id
+        request.matchdict['bill_id'] = 700
 
         mock_user = User()
         mock_user.id = user_id
         mock_user.bills = [Bill(), Bill(), Bill()]
+        for b in mock_user.bills:
+            b.user_id = user_id
 
-        with unittest.mock.patch('bill_tracker_pro.data.repository.get_user_by_id',
-                                 return_value=mock_user):
-            info = index(request)
+        p1 = unittest.mock.patch('billtracker.data.repository.get_user_by_id',
+                                 return_value=mock_user)
+        p2 = unittest.mock.patch('billtracker.data.repository.get_bill_by_id',
+                                 return_value=mock_user.bills[0])
+
+        with p1, p2:
+            info = details_get(request)
 
         self.assertIsNotNone(info['user'])
         self.assertGreater(len(info['user'].bills), 0)
@@ -102,9 +110,9 @@ Don't forget to install `webtest` if it's not already installed (`pip install we
 ```
 # An example of a functional web test
 
-class FunctionalSiteTests(unittest.TestCase):
+class SiteTests(unittest.TestCase):
     def setUp(self):
-        from bill_tracker_pro import main
+        from billtracker import main
         app = main({})
         from webtest import TestApp
         self.app = TestApp(app)
@@ -113,7 +121,6 @@ class FunctionalSiteTests(unittest.TestCase):
         res = self.app.get('/', status=200)
         self.assertTrue(b'Dannie Easom' in res.body)
         self.assertTrue(b'Unpaid bills' in res.body)
-
 ```
 
 ### Time to share what you've accomplished!
