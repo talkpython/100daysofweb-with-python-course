@@ -58,8 +58,7 @@ class QuoteTest(TestCase):
         # give optional fields = valid
         data = {'quote': 'Good Artists Copy; Great Artists Steal',
                 'author': 'Pablo Picasso',
-                'source':
-                'https://quoteinvestigator.com/2013/03/06/artists-steal/',  # noqa E501
+                'source': 'https://quoteinvestigator.com/2013/03/06/artists-steal/',  # noqa E501
                 'cover': 'http://media.bsix12.com/2011/05/picasso-great-artists-steal.jpg'}  # noqa E501
         form = QuoteForm(data=data)
         self.assertTrue(form.is_valid())
