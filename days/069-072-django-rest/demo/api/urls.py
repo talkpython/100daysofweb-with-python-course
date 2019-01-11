@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import QuoteAPIView
+from .views import QuoteList, QuoteDetail
 
 urlpatterns = [
-    path('', QuoteAPIView.as_view()),
+    path('<int:pk>/', QuoteDetail.as_view()),
+    path('', QuoteList.as_view()),
 ]

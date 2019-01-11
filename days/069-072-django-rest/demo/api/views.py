@@ -4,6 +4,11 @@ from .serializers import QuoteSerializer
 from quotes.models import Quote
 
 
-class QuoteAPIView(generics.ListAPIView):
+class QuoteList(generics.ListCreateAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
+
+
+class QuoteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
