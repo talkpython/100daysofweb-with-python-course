@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+  <table class="mui-table mui-table--bordered">
+    <thead>
+        <tr>
+          <th>Quote</th>
+          <th>Author</th>
+          <th>Added</th>
+          <th colspan="2">Edit Quote</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- for class based views rename this queryset to quote_list -->
+        {% for quote in quotes %}
+        <tr>
+          <td><a href="{% url "quotes:quote_detail" quote.id %}">{{ quote.quote }}</a></td>
+          <td>{{ quote.author }}</td>
+          <td>{{ quote.added|timesince }} ago by {{ quote.user }}</td>
+          {% if quote.user == request.user %}
+            <td><a class="mui-bDeleted mui-btn--small mui-btn--flat mui-btn--primary" href="{% url "quotes:quote_edit" quote.id %}">Edit</a></td>
+            <td><a class="mui-btn mui-btn--small mui-btn--flat mui-btn--danger" href="{% url "quotes:quote_delete" quote.id %}">Delete</a></td>
+          {% else %}
+            <td colspan="2"></td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="mui-container">
+    {% if request.user.is_authenticated %}
+      <a class="mui-btn mui-btn--primary" href="{% url "quotes:quote_new" %}">Add a quote</a>
+    {% else %}
+      <a class="mui-btn mui-btn--primary" href="{% url "login" %}">Login to add quotes</a>
+    {% endif %}
+      
+  </div>
+
+{% endblock %}

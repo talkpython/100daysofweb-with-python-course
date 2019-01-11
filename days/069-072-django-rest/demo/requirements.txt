@@ -1,0 +1,3 @@
+django
+django-registration
+djangorestframework

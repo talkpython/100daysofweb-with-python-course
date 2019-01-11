@@ -1,0 +1,6 @@
+Set these env variables in your venv/bin/activate script
+
+export SECRET_KEY='some-long-string'
+export DEBUG=True
+export SENDGRID_USERNAME='your-user'
+export SENDGRID_PASSWORD='your-password'
