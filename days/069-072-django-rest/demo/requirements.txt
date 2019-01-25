@@ -1,3 +1,5 @@
 django
 django-registration
 djangorestframework
+coreapi
+pyyaml
