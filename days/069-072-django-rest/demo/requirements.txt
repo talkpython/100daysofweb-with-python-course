@@ -3,3 +3,4 @@ django-registration
 djangorestframework
 coreapi
 pyyaml
+django-rest-swagger

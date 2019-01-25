@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     # 3rd party
     'rest_framework',
+    'rest_framework_swagger',
 
     # own apps
     'quotes',
@@ -141,4 +142,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ]
+}
+
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'rest_framework:login',
+    'LOGOUT_URL': 'rest_framework:logout',
 }
