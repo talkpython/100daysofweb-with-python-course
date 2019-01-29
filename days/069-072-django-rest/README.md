@@ -2,7 +2,11 @@
 
 In the coming 4 days we're going to build a simple [Web API](https://en.wikipedia.org/wiki/Web_API) for the Quotes app we built in [Django intro](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/045-048-django-intro) and [Django registration & login](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/053-056-django-registration) lessons.
 
-After setting up our environment, and loading in some quotes via a customized [django-admin command](https://docs.djangoproject.com/en/2.1/howto/custom-management-commands/), we will see how easy [Django Rest Framework](https://www.django-rest-framework.org/) makes it for us to build a simple API supporting full CRUD and including authentication and authorization. Finally we will use the [django-rest-swagger](https://github.com/marcgibbons/django-rest-swagger) package, a _Swagger Documentation Generator for Django REST Framework_.
+After setting up our environment, and loading in some quotes via a customized [django-admin command](https://docs.djangoproject.com/en/2.1/howto/custom-management-commands/), we will build a simple API with the [Django Rest Framework](https://www.django-rest-framework.org/). 
+
+We will support full CRUD (create-read-update-delete) methods and look at permissions adding authentication and authorization.
+
+Finally we will use the [django-rest-swagger](https://github.com/marcgibbons/django-rest-swagger) package, a _Swagger Documentation Generator for Django REST Framework_.
 
 Here is the plan for the coming 4 days:
 
