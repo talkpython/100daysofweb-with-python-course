@@ -34,12 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_registration',
 
-    # 3rd party
+    # external
     'rest_framework',
     'rest_framework_swagger',
 
     # own apps
     'quotes',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -138,13 +139,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
 EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ]
-}
 
-SWAGGER_SETTINGS = {
-    'LOGIN_URL': 'rest_framework:login',
-    'LOGOUT_URL': 'rest_framework:logout',
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
 }

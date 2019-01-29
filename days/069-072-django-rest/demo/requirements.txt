@@ -1,6 +1,5 @@
 django
 django-registration
 djangorestframework
-coreapi
-pyyaml
+requests
 django-rest-swagger

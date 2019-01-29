@@ -21,13 +21,13 @@ class Command(BaseCommand):
             '--username',
             dest='username',
             default=DEFAULT_USER,
-            help='username to register the quotes with',
+            help='username to associate the quotes with',
         )
         parser.add_argument(
             '--limit',
             dest='limit',
             default=MAX_QUOTES,
-            help=f'number of quotes to create (default = {MAX_QUOTES}'
+            help=f'number of quotes to create (default = {MAX_QUOTES})'
         )
 
     def handle(self, *args, **options):
@@ -48,7 +48,7 @@ class Command(BaseCommand):
             sys.exit('Please specify an numeric value for limit')
 
         resp = requests.get(INSPIRATIONAL_QUOTES)
-        lines = resp.text.strip().split('\n')
+        lines = resp.text.strip().splitlines()
 
         headers = 'quote author genre'.split()
         reader = csv.DictReader(lines, fieldnames=headers, delimiter=';')
@@ -63,4 +63,4 @@ class Command(BaseCommand):
 
         Quote.objects.bulk_create(quotes)
 
-        print(f'Done: {MAX_QUOTES} quotes created')
+        print(f'Done: {max_quotes} quotes created')
