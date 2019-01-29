@@ -1,20 +1,20 @@
 # Days 69-72 Django Rest Framework
 
-In the coming 4 days we're going to build a simple [Web API](https://en.wikipedia.org/wiki/Web_API) for the Quotes app we built in [Django intro](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/045-048-django-intro) and [Django registration & login](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/053-056-django-registration) lessons..
+In the coming 4 days we're going to build a simple [Web API](https://en.wikipedia.org/wiki/Web_API) for the Quotes app we built in [Django intro](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/045-048-django-intro) and [Django registration & login](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/053-056-django-registration) lessons.
 
-After setting up our environment, and loading in some quotes via a customized [django-admin command](https://docs.djangoproject.com/en/2.1/howto/custom-management-commands/), we will see how easy [Django Rest Framework](https://www.django-rest-framework.org/) makes it for us to build APIs.
-
-We will support full CRUD and look at permissions to only make quotes editable that are owned by the user that added them. Finally we will look at schema and documentation generation.
+After setting up our environment, and loading in some quotes via a customized [django-admin command](https://docs.djangoproject.com/en/2.1/howto/custom-management-commands/), we will see how easy [Django Rest Framework](https://www.django-rest-framework.org/) makes it for us to build a simple API supporting full CRUD and including authentication and authorization. Finally we will use the [django-rest-swagger](https://github.com/marcgibbons/django-rest-swagger) package, a _Swagger Documentation Generator for Django REST Framework_.
 
 Here is the plan for the coming 4 days:
 
 ## Day 1. + 2. - Watch the videos 
 
-Watch the videos for this lesson, make notes, and ideally try following along with the code, it's how you learn most.
+Watch the videos for this lesson, make notes, and to get the most out of it try to follow along with [the demo code](demo).
 
 ## Day 3. + 4. - Practice yourself
 
-You probably guessed it, starting day 3 you will use Django Rest Framework yourself to build an API. Use an existing project or generate some data of interest, for example via [Mockeroo](https://www.mockaroo.com/). You can also try [PyBites Code Challenge 34 - Build a Simple API With Django REST Framework](https://codechalleng.es/challenges/34/) where we provided some ideas.
+You probably guessed it, starting day 3 you will use Django Rest Framework yourself to build an API. Use an existing project or generate some data of interest, for example via [Mockeroo](https://www.mockaroo.com/).
+
+You can also try [PyBites Code Challenge 34 - Build a Simple API With Django REST Framework](https://codechalleng.es/challenges/34/) where we provided some ideas.
 
 Have fun and share your work with us so we can try out your awesome API :) - good luck and remember: _the learning is in the practice_.
 
