@@ -1,8 +1,6 @@
 # Days 85-88 AWS Lambda
 
-[AWS Lambda](https://aws.amazon.com/lambda/) is a really cool [_serverless_](https://en.wikipedia.org/wiki/Serverless_computing) technology that lets you _run code without thinking about servers_, paying only for the compute time you consume:
-
-![how it works aws diagram](img/lambda-howitworks.png)
+[AWS Lambda](https://aws.amazon.com/lambda/) is a really cool [_serverless_](https://en.wikipedia.org/wiki/Serverless_computing) technology that lets you _run code without thinking about servers_, paying only for the compute time you consume! Check out the [AWS Lambda site](https://aws.amazon.com/lambda/) for more details.
 
 In the coming 4 days we're going to create a [Bottle web app](https://bottlepy.org/docs/dev/) front-end that lets users check if their code is PEP8 compliant.
 
