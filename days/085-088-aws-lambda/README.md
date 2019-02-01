@@ -6,7 +6,9 @@ In the coming 4 days we're going to create a [Bottle web app](https://bottlepy.o
 
 The actual PEP checking will happen on AWS by means of a [lambda function](https://aws.amazon.com/lambda/) we are going to write. Here is how the app will look when non-compliant code is checked:
 
-![our PEP8 checker app built with Bottle and Lambda](img/demo_app.png)
+![our PEP8 checker app built with Bottle and Lambda - pep failed code](img/pep-notok.png)
+
+![our PEP8 checker app built with Bottle and Lambda - pep happy with code](img/pep-ok.png)
 
 And this is the architecture behind it:
 
