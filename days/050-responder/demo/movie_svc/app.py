@@ -1,11 +1,11 @@
 import responder
 
-app = responder.API()
+api = responder.API()
 
 
-@app.route('/')
+@api.route('/')
 def index(req, resp):
-    resp.content = "Hello world"
+    resp.content = api.template('home/index.html')
 
 
-app.run()
+api.run()
