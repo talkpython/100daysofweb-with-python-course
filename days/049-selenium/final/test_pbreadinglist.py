@@ -66,12 +66,6 @@ def test_has_login_link(driver_home):
         pytest.fail('Should have a link called Login')
 
 
-def _get_number_books_read(driver):
-    driver.find_element_by_link_text(MY_BOOKS).click()
-    stats = driver.find_element_by_class_name('mui--text-subhead')
-    return int(re.sub(r'Status: (\d+) books.*', r'\1', stats.text))
-
-
 def test_book_page_title(driver_first_book):
     expected = ("PyBites My Reading List | The Hitchhiker's "
                 "Guide to Python")
@@ -105,54 +99,58 @@ def test_search_box_auto_direct(driver_first_book):
 
 
 def test_login_to_site(driver_login):
-    # logged in links
     try:
-        driver_login.find_element_by_link_text('5-Hour Challenge')
         driver_login.find_element_by_link_text('Logout')
         driver_login.find_element_by_link_text(MY_BOOKS)
+        driver_login.find_element_by_link_text('5-Hour Challenge')
     except NoSuchElementException:
         pytest.fail('Missing private links in navbar')
 
     try:
         driver_login.find_element_by_link_text('Login')
-        pytest.fail('Should not have a Login link when logged in')
+        pytest.fail('Should not have a link called Login when logged in')
     except NoSuchElementException:
         pass
+
+
+def _get_number_books_read(driver):
+    driver.find_element_by_link_text(MY_BOOKS).click()
+    stats = driver.find_element_by_class_name('mui--text-subhead')
+    return int(re.sub(r'Status: (\d+) books.*', r'\1', stats.text))
 
 
 def test_add_delete_book(driver_login):
     num_books_read_start = _get_number_books_read(driver_login)
 
-    # adding a book should increase book counter by 1
+    # adding a book should increase the book counter by 1
     driver_login.get(SECOND_BOOK)
     driver_login.find_element_by_name('bookSubmit').click()
-    driver_login.find_element_by_link_text(MY_BOOKS).click()
-    num_books_read_after_add = _get_number_books_read(driver_login)
-    assert num_books_read_after_add == num_books_read_start + 1
+    num_books_after_add = _get_number_books_read(driver_login)
+    assert num_books_after_add == num_books_read_start + 1
 
-    # deleting the book should bring counter back to initial count
+    # deleting the book should bring the counter back to the initial count
     driver_login.get(SECOND_BOOK)
     driver_login.find_element_by_name('deleteBook').click()
-    num_books_read_after_delete = _get_number_books_read(driver_login)
-    assert num_books_read_after_delete == num_books_read_start
+    num_books_after_delete = _get_number_books_read(driver_login)
+    assert num_books_after_delete == num_books_read_start
 
 
 def test_logout(driver_login):
     driver_login.find_element_by_link_text('Logout').click()
 
     src = driver_login.page_source
-    assert 'Logged out' in src
+    assert "Logged out" in src
 
     # logged out links
     try:
         driver_login.find_element_by_link_text('Login')
     except NoSuchElementException:
-        pytest.fail('Should see Login link in navbar')
+        pytest.fail('Should see Login link in navbar when logged out')
 
     try:
-        driver_login.find_element_by_link_text('5-Hour Challenge')
         driver_login.find_element_by_link_text('Logout')
         driver_login.find_element_by_link_text(MY_BOOKS)
-        pytest.fail('Should not private links in navbar when logged out')
+        driver_login.find_element_by_link_text('5-Hour Challenge')
+        pytest.fail('Should not show private links when logged out')
     except NoSuchElementException:
         pass
