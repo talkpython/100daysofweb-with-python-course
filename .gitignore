@@ -150,3 +150,7 @@ screencaster.xml
 days/050-responder/demo/movie_svc/.idea/encodings.xml
 days/050-responder/demo/movie_svc/.idea/movie_svc.iml
 days/050-responder/demo/movie_svc/.idea/vcs.xml
+vcs.xml
+days/093-096-vuejs/movie_exploder/.idea/encodings.xml
+days/093-096-vuejs/movie_exploder/.idea/movie_exploder.iml
+days/093-096-vuejs/movie_exploder/node_modules
