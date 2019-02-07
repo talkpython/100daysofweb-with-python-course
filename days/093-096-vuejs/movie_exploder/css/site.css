@@ -1,0 +1,17 @@
+
+body {
+    background-color: #6dacc2;
+    color: black;
+}
+
+.card {
+    background-color: white;
+    margin: 100px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+
+.card h1 {
+    text-align: center;
+}
