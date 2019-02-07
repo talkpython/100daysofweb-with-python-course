@@ -1,0 +1,48 @@
+{% extends "/shared/_layout.html" %}
+
+{% block content %}
+
+        <div class="content">
+            <h1><span class="font-semi-bold">MovieDb Service</span> <span class="smaller">A RESTful movie service</span></h1>
+            <p class="lead">
+                The <a href="https://training.talkpython.fm/">Talk Python</a> movie search service<br>
+                <br>
+                <strong>Endpoints</strong>
+            <ul>
+                <li>
+                    <strong>Search movies</strong><br>
+                    <a href="/api/search/run">GET /api/search/{keyword}</a>
+                </li>
+                <li>
+                    <strong>Movies by director</strong><br>
+                    <a href="/api/director/cameron">GET /api/director/{director_name}</a>
+                </li>
+                <li>
+                    <strong>Movie by IMDB code</strong><br>
+                    <a href="/api/movie/tt0096754">GET /api/movie/{imdb_number}</a>
+                </li>
+                <li>
+                    <strong>Top 10 Movies (by IMDB score)</strong><br>
+                    <a href="/api/movie/top">GET /api/movie/top</a>
+                </li>
+                <li>
+                    <strong>All genres</strong><br>
+                    <a href="/api/movie/genre/all">GET /api/movie/genre/all</a>
+                </li>
+                <li>
+                    <strong>Top movies for a given genres</strong><br>
+                    <a href="/api/movie/genre/sci-fi">GET /api/movie/genre/{genre}</a>
+                </li>
+            </ul>
+            </p>
+
+            <p class="disclaimer">
+                Note: This service has limited data. It is for educational purposes only. If you are looking to build
+                a real app based on movie data APIs, you should check out
+                <a href="http://www.omdbapi.com/"
+                   target="_blank">OMDb API: The Open Movie Database</a>.
+            </p>
+        </div>
+
+
+{% endblock %}
