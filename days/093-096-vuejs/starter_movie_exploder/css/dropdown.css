@@ -1,0 +1,116 @@
+/* https://freefrontend.com/css-select-boxes/ */
+
+.typo, .list a {
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #585858;
+    text-decoration: none;
+}
+
+.typo option, .list a option {
+    font-size: 30px;
+}
+
+.transition {
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.wrapper {
+    padding-top: 150px;
+    height: 100vh;
+    font-size: 60px;
+}
+
+.list {
+    display: inline-block;
+    position: relative;
+    margin-left: 6px;
+}
+
+.list ul {
+    text-align: left;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.list ul .active {
+    display: block;
+}
+
+.list li {
+    list-style: none;
+}
+
+.list li:first-child a {
+    color: #7d40bf;
+}
+
+.list a {
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    color: #7b00ff;
+    position: relative;
+}
+
+.list a:after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 0;
+    left: 0;
+    background: #b066ff;
+    bottom: 0;
+    -webkit-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+}
+
+.list a:hover {
+    cursor: pointer;
+    color: #666666;
+}
+
+.list a:hover:after {
+    width: 100%;
+}
+
+select {
+    display: inline;
+    border: 0;
+    width: auto;
+    margin-left: 10px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-bottom: 2px solid #555;
+    color: #666666;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    font-size: 25px;
+    text-align: center;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+select option {
+    border: 0;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.placeholder {
+    border-bottom: 4px solid;
+    cursor: pointer;
+}
+
+.placeholder:hover {
+    color: #888888;
+}
