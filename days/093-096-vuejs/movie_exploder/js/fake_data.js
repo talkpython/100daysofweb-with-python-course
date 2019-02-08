@@ -197,6 +197,7 @@ movies_temp = {
 }
 
 genres_temp = [
+    "Top movies by genre",
     "action",
     "adventure",
     "animation",
