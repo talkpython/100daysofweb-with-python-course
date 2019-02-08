@@ -13,11 +13,21 @@
     <div class="card" id="app">
         <h1>Movie Exploder</h1>
 
+        <!--suppress HtmlFormInputWithoutLabel -->
         <input type="text" v-model="search_text">
 
         <div class="movies">
             <div class="movie" v-for="m in movies">
                 <div class="title">{{m.title.toLocaleUpperCase()}}</div>
+                <div class="attributes">
+                    <span class="year" v-if="m.year > 0">{{m.year}}</span>
+                    <span class="year" v-else>NO YEAR</span>
+                    <span class="rating" v-if="m.rating">{{m.rating}}</span>
+                    <span class="score">score {{m.imdb_score}}</span>
+                </div>
+                <div class="genres">
+                    <span class="badge badge-info" v-for="g in m.genres">{{g}}</span>
+                </div>
             </div>
         </div>
     </div>
