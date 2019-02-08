@@ -70,3 +70,7 @@ input.form-control {
 span.badge {
     cursor: pointer;
 }
+
+.top_10 {
+    cursor: pointer;
+}
