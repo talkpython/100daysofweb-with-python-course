@@ -13,8 +13,19 @@
     <div class="card" id="app">
         <h1>Movie Exploder</h1>
 
-        <!--suppress HtmlFormInputWithoutLabel -->
-        <input type="text" v-model="search_text">
+        <div class="controls">
+            <!--suppress HtmlFormInputWithoutLabel -->
+            <input type="text" v-model="search_text"
+                   class="form-control"
+                   placeholder=" Search for a movie by keyword"
+                   @keyup.enter="search()"
+            >
+
+            <div class="subcontrols">
+                <a class="top_10" @click="top_10()">Top 10</a>
+            </div>
+
+        </div>
 
         <div class="movies">
             <div class="movie" v-for="m in movies">
