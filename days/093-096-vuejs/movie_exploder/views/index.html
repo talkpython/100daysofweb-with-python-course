@@ -46,7 +46,11 @@
                 <span class="score">score {{m.imdb_score}}</span>
             </div>
             <div class="genres">
-                <span class="badge badge-info" v-for="g in m.genres">{{g}}</span>
+                <span class="badge"
+                      v-for="g in m.genres"
+                      :class="[g === selected_genre ? 'badge-danger': 'badge-info']"
+                      @click="load_genre(g)"
+                >{{g}}</span>
             </div>
         </div>
     </div>

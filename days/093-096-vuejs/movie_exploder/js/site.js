@@ -1,4 +1,3 @@
-
 const base_url = "http://movie_service.talkpython.fm/api/"
 
 // noinspection ES6ModulesDependencies
@@ -21,10 +20,15 @@ app = new Vue({
         top_10: function () {
             // noinspection JSUnusedGlobalSymbols
             this.selected_genre = this.no_genre
+            this.search_text = null
             this.load_movies(base_url + "movie/top")
         },
         load_genre: function (genre) {
-            console.log("Would load " + genre)
+            let url = base_url + "movie/genre/" + genre
+            this.search_text = null
+            // noinspection JSUnusedGlobalSymbols
+            this.selected_genre = genre
+            this.load_movies(url)
         },
         load_movies: function (url) {
             let that = this
@@ -37,7 +41,7 @@ app = new Vue({
                     console.log("ERROR! " + error);
                 })
         },
-        load_all_genres: function() {
+        load_all_genres: function () {
             let that = this
             // noinspection ES6ModulesDependencies, JSUnresolvedVariable
             axios.get(base_url + 'movie/genre/all')
@@ -51,7 +55,7 @@ app = new Vue({
                     console.log("ERROR! " + error);
                 })
         },
-        init: function() {
+        init: function () {
             this.load_all_genres()
             this.top_10()
         }
@@ -59,4 +63,3 @@ app = new Vue({
 })
 
 app.init()
-
