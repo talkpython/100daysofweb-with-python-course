@@ -38,7 +38,7 @@ app = new Vue({
                     that.movies = response.data.hits
                 })
                 .catch(function (error) { // handle error
-                    console.log("ERROR! " + error);
+                    console.log("ERROR! " + error)
                 })
         },
         load_all_genres: function () {
@@ -52,7 +52,7 @@ app = new Vue({
                     that.selected_genre = that.no_genre
                 })
                 .catch(function (error) { // handle error
-                    console.log("ERROR! " + error);
+                    console.log("ERROR! " + error)
                 })
         },
         init: function () {
