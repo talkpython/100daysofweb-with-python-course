@@ -4,7 +4,9 @@ app = new Vue({
     el: '#app',
     data: {
         search_text: null,
-        movies: movies_temp.hits
+        movies: movies_temp.hits,
+        genres: genres_temp,
+        selected_genre: null
     },
     methods: {
         search: function() {
