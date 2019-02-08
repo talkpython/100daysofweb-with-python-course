@@ -14,13 +14,16 @@
         <h1>Movie Exploder</h1>
 
         <input type="text" v-model="search_text">
-        <div style="color: green;">
-            {{search_text}}
-        </div>
 
+        <div class="movies">
+            <div class="movie" v-for="m in movies">
+                <div class="title">{{m.title.toLocaleUpperCase()}}</div>
+            </div>
+        </div>
     </div>
 
     <script src="../js/vue/vue.js"></script>
+    <script src="../js/fake_data.js"></script>
     <script src="../js/site.js"></script>
 
 </body>
