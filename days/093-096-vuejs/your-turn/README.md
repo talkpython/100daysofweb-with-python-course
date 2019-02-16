@@ -22,7 +22,7 @@ Here are a few steps and code concepts to help you on this journey.
 
 To create the Vue.js app, you will create an instance passing the *settings* object. Do this in `js/site.js`.
 
-```
+```javascript
 var app = new Vue({
     el: '#app',
     data: {
@@ -37,7 +37,7 @@ For this work, you'll need to set the id of the card block of HTML in `views/ind
 
 To show data, you use the handlebar style, in HTML:
 
-```
+```html
 <div>
    {{search_text}}
 </div>
@@ -47,7 +47,7 @@ To show data, you use the handlebar style, in HTML:
 
 To bind bi-directionally, use the model on elements that can change (input, select, etc):
 
-```
+```html
 <input type="text" v-model="search_text" />
 ```
 
@@ -57,7 +57,7 @@ Play around with this in your app to see that it's working.
 
 To loop over data, use `v-for`, for example:
 
-```
+```html
 <div class="movie" v-for="m in movies">
 </div>
 ```
@@ -66,7 +66,7 @@ To loop over data, use `v-for`, for example:
 
 For conditional rendering, it's `v-if` and `v-else:
 
-```
+```html
 <span class="year" v-if="m.year > 0">{{m.year}}</span>
 <span class="year" v-else>NO YEAR</span>
 ```
@@ -86,21 +86,21 @@ methods: {
 
 ### Hooking events
 
-To hook events, use the @ directive on HTML elements. Here is an exampe:
+To hook events, use the @ directive on HTML elements. Here is an example:
 
-```
+```html
 <input type="text" v-model="search_text"  @keyup.enter="the_function()" />
 ```
 
 ### Setting attributes
 
-One final bit of code you'll need to make this app work is the ability to set attributes. To do that, you'll use `:attribute_name="binding_value"`. For exampe:
+One final bit of code you'll need to make this app work is the ability to set attributes. To do that, you'll use `:attribute_name="binding_value"`. For example:
 
-```
+```html
 <option v-for="g in genres" :value="g">{{g}}</option>
 ```
 
-With all of this background info. Go ahead and write the app to work up to the point we had it with fake data. For that you'll need to create and include a fake_data.js file. Just save the data from the service.
+With all of this background info. Go ahead and write the app to work up to the point we had it with fake data. For that you'll need to create and include a `fake_data.js` file. Just save the data from the service.
 
 
 ## Day 3: Watch videos second half
@@ -113,7 +113,9 @@ Down to the last day! Now you can toss that fake data and start using the API.
 
 We will be using the [axios library](https://github.com/axios/axios). You can call any GET HTTP endpoint via something like this:
 
-```
+```javascript
+// In js/site.js within a method of your app.
+
 let that = this
 axios.get(url)
     .then(function (response) { // handle success
@@ -124,11 +126,11 @@ axios.get(url)
     })
 ```
 
-Remeber our service is located at [movie_service.talkpython.fm](http://movie_service.talkpython.fm/). Use this type of code above to implement three methods and bind those methods to the revelant events:
+Remember our service is located at [movie_service.talkpython.fm](http://movie_service.talkpython.fm/). Use this type of code above to implement three methods and bind those methods to the relevant events:
 
-* search()
-* top_10()
-* load_genre(genre)
+* `search()`
+* `top_10()`
+* `load_genre(genre)`
 
 Also use it to get the genres from the service.
 
