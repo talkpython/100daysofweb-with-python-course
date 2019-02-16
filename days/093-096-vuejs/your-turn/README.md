@@ -1,6 +1,6 @@
 # Days 93-96 Frontend Web Apps with Vue.js
 
-In this your-turn, you will deploy one of the web apps that you have created during this course.
+In this your-turn, you will developer the web app we created during the presentation.
 
 ## Day 1: Watch the first half of the video lessons
 
@@ -10,7 +10,7 @@ The first day of this 4-day block is to watch the videos. You should watch them 
 
 Now that you know some Vue.js, it's time to put it to use! Find the starter project in the folder `your_movie_exploder` (adjacent to this file). Open that in your editor. 
 
-If you are using PyCharm or WebStorm, be sure that the Vue.js plugin is installed and enabled. We have already confirmed this version of the site as an `npm` package and installed the required dependencies. That means the Vue.js plugin should just work in the JetBrains tools, and maybe others too.
+If you are using PyCharm or WebStorm, be sure that the Vue.js plugin is installed and enabled. We have already configured this version of the site as an `npm` package and installed the required dependencies. That means the Vue.js plugin should just work in the JetBrains tools, and maybe others too.
 
 Because APIs can be so ephemeral and their schema unstable, we have decided to use the exact same app and service over at [movie_service.talkpython.fm](http://movie_service.talkpython.fm/). 
 
@@ -53,12 +53,16 @@ To bind bi-directionally, use the model on elements that can change (input, sele
 
 Play around with this in your app to see that it's working.
 
+### Looping over data with repeated HTML blocks
+
 To loop over data, use `v-for`, for exampe:
 
 ```
 <div class="movie" v-for="m in movies">
 </div>
 ```
+
+### Conditional rendering
 
 For conditional rendering, it's `v-if` `and v-else`:
 
@@ -100,11 +104,34 @@ With all of this background info. Go ahead and write the app to work up to the p
 
 ## Day 3: Watch videos second half
 
-...
+This day is just watching the second set of videos. You should watch them from Lecture 19 (Searching movies via the API) -> (Your turn, day 4).
 
 ## Day 4: Round out the app with the real service
 
-...
+Down to the last day! Now you can toss that fake data and start using the API.
+
+We will be using the [axios library](https://github.com/axios/axios). You can call any GET HTTP endpoint via something like this:
+
+```
+let that = this
+axios.get(url)
+    .then(function (response) { // handle success
+        // Work with response.data
+    })
+    .catch(function (error) { // handle error
+        console.log("ERROR! " + error);
+    })
+```
+
+Remeber our service is located at [movie_service.talkpython.fm](http://movie_service.talkpython.fm/). Use this type of code above to implement three methods and bind those methods to the revelant events:
+
+* search()
+* top_10()
+* load_genre(genre)
+
+Also use it to get the genres from the service.
+
+Once you have this working. Go ahead and freestyle with the app if you have some extra time. Congrats, you're done!
 
 ### Time to share what you've accomplished!
 
@@ -113,5 +140,3 @@ Be sure to share your last couple of days work on Twitter or Facebook. Use the h
 Here are [some examples](https://twitter.com/search?q=%23100DaysOfCode) to inspire you. Consider including [@talkpython](https://twitter.com/talkpython) and [@pybites](https://twitter.com/pybites) in your tweets.
 
 *See a mistake in these instructions? Please [submit a new issue](https://github.com/talkpython/100daysofweb-with-python-course/issues) or fix it and [submit a PR](https://github.com/talkpython/100daysofweb-with-python-course/pulls).*
-
-
