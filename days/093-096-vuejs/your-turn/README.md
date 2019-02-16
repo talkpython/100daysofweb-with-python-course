@@ -18,12 +18,85 @@ So your goal on this day will be to build out the 1st half of that app. You will
 
 Here are a few steps and code concepts to help you on this journey.
 
-## Creating the Vue.js app
+### Creating the Vue.js app
 
-To create the Vue.js app, you will create an instance passing the *settings* object. Do this in `site.js`.
+To create the Vue.js app, you will create an instance passing the *settings* object. Do this in `js/site.js`.
 
-var app = Vue({
-}
+```
+var app = new Vue({
+    el: '#app',
+    data: {
+        search_text: null,
+    }
+})
+```
+
+For this work, you'll need to set the id of the card block of HTML in `views/index.html` to `app`.
+
+### Showing data in HTML as a string
+
+To show data, you use the handlebar style, in HTML:
+
+```
+<div>
+   {{search_text}}
+</div>
+```
+
+### Bi-directionally bindings
+
+To bind bi-directionally, use the model on elements that can change (input, select, etc):
+
+```
+<input type="text" v-model="search_text" />
+```
+
+Play around with this in your app to see that it's working.
+
+To loop over data, use `v-for`, for exampe:
+
+```
+<div class="movie" v-for="m in movies">
+</div>
+```
+
+For conditional rendering, it's `v-if` `and v-else`:
+
+```
+<span class="year" v-if="m.year > 0">{{m.year}}</span>
+<span class="year" v-else>NO YEAR</span>
+```
+
+### Adding functions
+
+To add functions to your app, use the methods field in the *settings* object:
+
+```
+methods: {
+        the_function: function() {
+            ...
+        }
+    }
+```
+
+### Hooking events
+
+To hook events, use the @ directive on HTML elements. Here is an exampe:
+
+```
+<input type="text" v-model="search_text"  @keyup.enter="the_function()" />
+```
+
+### Setting attributes
+
+One final bit of code you'll need to make this app work is the ability to set attributes. To do that, you'll use `:attribute_name="binding_value"`. For exampe:
+
+```
+<option v-for="g in genres" :value="g">{{g}}</option>
+```
+
+With all of this background info. Go ahead and write the app to work up to the point we had it with fake data. For that you'll need to create and include a fake_data.js file. Just save the data from the service.
+
 
 ## Day 3: Watch videos second half
 
