@@ -1,6 +1,6 @@
 # Days 93-96 Frontend Web Apps with Vue.js
 
-In this your-turn, you will developer the web app we created during the presentation.
+In this your-turn, you will develop the web app we created during the presentation.
 
 ## Day 1: Watch the first half of the video lessons
 
@@ -55,7 +55,7 @@ Play around with this in your app to see that it's working.
 
 ### Looping over data with repeated HTML blocks
 
-To loop over data, use `v-for`, for exampe:
+To loop over data, use `v-for`, for example:
 
 ```
 <div class="movie" v-for="m in movies">
@@ -64,7 +64,7 @@ To loop over data, use `v-for`, for exampe:
 
 ### Conditional rendering
 
-For conditional rendering, it's `v-if` `and v-else`:
+For conditional rendering, it's `v-if` and `v-else:
 
 ```
 <span class="year" v-if="m.year > 0">{{m.year}}</span>
@@ -75,7 +75,8 @@ For conditional rendering, it's `v-if` `and v-else`:
 
 To add functions to your app, use the methods field in the *settings* object:
 
-```
+```javascript
+// in js/site.js 
 methods: {
         the_function: function() {
             ...
