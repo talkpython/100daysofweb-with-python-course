@@ -2,13 +2,28 @@
 
 In this your-turn, you will deploy one of the web apps that you have created during this course.
 
-## Day 1: Watch the video lessons
+## Day 1: Watch the first half of the video lessons
 
-The first day of this 4-day block is to watch the videos. There is a lot of content here but we want to spend one day per type of test for the remaining three days so try to get through it in one here.
+The first day of this 4-day block is to watch the videos. You should watch them from lecture 1 (Chapter into) -> lecture 18 (Your turn, day 2). 
 
-## Day 2: Build out with fake data 
+## Day 2: Build out the app with fake data 
 
-...
+Now that you know some Vue.js, it's time to put it to use! Find the starter project in the folder `your_movie_exploder` (adjacent to this file). Open that in your editor. 
+
+If you are using PyCharm or WebStorm, be sure that the Vue.js plugin is installed and enabled. We have already confirmed this version of the site as an `npm` package and installed the required dependencies. That means the Vue.js plugin should just work in the JetBrains tools, and maybe others too.
+
+Because APIs can be so ephemeral and their schema unstable, we have decided to use the exact same app and service over at [movie_service.talkpython.fm](http://movie_service.talkpython.fm/). 
+
+So your goal on this day will be to build out the 1st half of that app. You will build it out to use fake data (which you will save from the service). On the **4th day**, you'll start working with the real service using `axios`.
+
+Here are a few steps and code concepts to help you on this journey.
+
+## Creating the Vue.js app
+
+To create the Vue.js app, you will create an instance passing the *settings* object. Do this in `site.js`.
+
+var app = Vue({
+}
 
 ## Day 3: Watch videos second half
 
