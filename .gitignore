@@ -156,3 +156,8 @@ days/093-096-vuejs/movie_exploder/.idea/movie_exploder.iml
 days/093-096-vuejs/movie_exploder/node_modules
 days/093-096-vuejs/movie_exploder/.idea/jsLibraryMappings.xml
 days/093-096-vuejs/movie_exploder/.idea/dictionaries/mkennedy.xml
+.idea/encodings.xml
+.idea/web100-demos.iml
+.idea/dictionaries/mkennedy.xml
+days/050-responder/demo/movie_svc/Pipfile
+days/050-responder/demo/movie_svc/Pipfile.lock
