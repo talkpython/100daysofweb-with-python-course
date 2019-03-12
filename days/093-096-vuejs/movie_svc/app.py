@@ -5,4 +5,4 @@ from data import db
 
 db.global_init()
 
-api.run()
+api.run(port=7007)
