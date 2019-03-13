@@ -1,0 +1,20 @@
+version: "3"
+services:
+  base_server:
+    build: ./base_server/
+    image: base_server:latest
+  frontend:
+    build: ./frontend/
+    command: nginx -g "daemon off;"
+    depends_on:
+      - services
+      - base_server
+    ports:
+      - "80:80"
+  services:
+    build: ./services/
+    command: /venv/bin/python /app/app.py
+    depends_on:
+      - base_server
+    ports:
+      - "7007:7007"
