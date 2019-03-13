@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get upgrade -y
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get install -y -q sudo
+RUN apt-get install -y -q fail2ban
+RUN apt-get install -y -q httpie
+RUN apt-get install -y -q glances
+
+RUN apt-get install -y -q nginx
+RUN rm /etc/nginx/sites-enabled/default
+COPY site.nginx /etc/nginx/sites-enabled/site.nginx
+COPY movie_exploder /app

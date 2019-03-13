@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Exploder!</title>
+
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/dropdown.css">
+
+</head>
+<body>
+
+<div class="card" id="app">
+    <h1>Movie Exploder</h1>
+
+    <div class="controls">
+        <!--suppress HtmlFormInputWithoutLabel -->
+        <input type="text" v-model="search_text"
+               class="form-control"
+               placeholder=" Search for a movie by keyword"
+               @keyup.enter="search()"
+        >
+
+        <div class="subcontrols">
+
+            <a class="top_10" @click="top_10()">Top 10</a>
+
+            <select v-model="selected_genre"
+                    @change="load_genre(selected_genre)">
+                <option v-for="g in genres" :value="g">{{g}}</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="movies">
+        <div class="movie" v-for="m in movies">
+            <div class="title">{{m.title.toLocaleUpperCase()}}</div>
+            <div class="attributes">
+                <span class="year" v-if="m.year > 0">{{m.year}}</span>
+                <span class="year" v-else>NO YEAR</span>
+                <span class="rating" v-if="m.rating">{{m.rating}}</span>
+                <span class="score">score {{m.imdb_score}}</span>
+            </div>
+            <div class="genres">
+                <span class="badge"
+                      v-for="g in m.genres"
+                      :class="[g === selected_genre ? 'badge-danger': 'badge-info']"
+                      @click="load_genre(g)"
+                >{{g}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/vue/vue.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/fake_data.js"></script>
+<script src="../js/site.js"></script>
+<script src="../js/dropdown.js"></script>
+
+</body>
+</html>

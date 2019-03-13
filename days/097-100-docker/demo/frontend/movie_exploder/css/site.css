@@ -1,0 +1,76 @@
+
+body {
+    background-color: #6dacc2;
+    color: black;
+}
+
+.card {
+    background-color: white;
+    margin: 50px 100px;
+    font-size: 18px;
+    padding: 20px 20px 100px;
+}
+
+
+.card h1 {
+    text-align: center;
+}
+
+input.form-control {
+    display: inline-block;
+    max-width: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.controls {
+    text-align: center;
+}
+
+.controls .subcontrols {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.controls .subcontrols a {
+    padding-bottom: 4px;
+    border-bottom: 2px solid #555;
+    color: #555;
+}
+.controls .subcontrols a:hover {
+    text-decoration: none;
+}
+
+.controls > * {
+    vertical-align: middle;
+}
+
+.movies .movie  {
+    padding: 10px;
+    max-width: 700px;
+    margin: 20px auto 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.movies .title {
+    font-size: 36px;
+}
+
+.movie .attributes {
+    font-size: 24px;
+}
+
+.movie .genres > * {
+    margin-right: 10px;
+}
+
+span.badge {
+    cursor: pointer;
+}
+
+.top_10 {
+    cursor: pointer;
+}
