@@ -16,3 +16,5 @@ RUN /venv/bin/pip install responder
 COPY movie_svc /app
 WORKDIR /app
 RUN /venv/bin/pip install -r /app/requirements.txt
+
+ENTRYPOINT /venv/bin/python /app/app.py
