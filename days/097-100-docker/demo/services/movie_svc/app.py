@@ -5,4 +5,5 @@ from data import db
 
 db.global_init()
 
-api.run(port=7007)
+
+api.run(port=7007, address="0.0.0.0")
