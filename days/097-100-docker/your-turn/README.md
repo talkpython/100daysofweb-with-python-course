@@ -2,11 +2,11 @@
 
 In this your-turn, you will develop the web app we created during the presentation.
 
-## Day 1: 
+## Day 1: Watch the Docker videos
 
 The first day of this 4-day block is to watch the videos. You should watch them from lecture 1 (Chapter into) -> lecture 19 (Your turn, day 2). 
 
-## Day 2: 
+## Day 2: Dockerize one of your applications
 
 At this point, you've seen a lot of Docker.  It's time to try it for yourself.
 
