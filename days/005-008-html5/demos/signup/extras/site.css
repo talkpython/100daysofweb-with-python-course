@@ -1,0 +1,32 @@
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;
+    background-color: white;
+    padding: 20px;
+    padding-right: 30px;
+    border-radius: 10px;
+}
+
+form > * {
+    margin: 10px;
+}
+
+form > div {
+    text-align: right;
+    margin-right: -10px;
+}
+
+body {
+    background-color: #84cbff;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 64px;
+    font-weight: lighter;
+}
