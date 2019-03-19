@@ -4,11 +4,21 @@ body {
     padding: 0;
 }
 
+#top-div img {
+    float: right;
+    height: 96px;
+}
+
 #top-div {
     background-color: #222;
     color: white;
     font-size: 48px;
     padding: 10px;
+}
+
+#top-div .msg {
+    margin-top: 12px;
+    margin-left: 10px;
 }
 
 a {
