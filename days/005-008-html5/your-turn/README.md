@@ -4,13 +4,15 @@ Now you have seen the videos from this chapter, you're ready to start experiment
 
 ## Day 1: Watch the video lessons
 
-The watch the videos and keep track of where you might want to grab some examples. Remember you have everything you saw typed in the demos folder adjacent to this one if you need it.
+The watch the videos and keep track of where you might want to grab some examples. Remember you have everything you saw typed in the demos folder adjacent to this one if you need them.
 
 ## Days 2-3: Recreate Google's homepage
 
-For your hands-on exercises during this chapter, you'll do something quick and easy: recreate Google! While I made fun of Yahoo! for being nothing but a glamorized Yellow Pages, the tech behind Google was truly revolutionary at the time.
+For your hands-on exercises during this chapter, you'll do something quick and easy: recreate Google! 
 
-But there web design was decidedly not special. Check it out in the way back machine (choose 1998 for your time frame):
+While I made fun of Yahoo! for being nothing but a glamorized Yellow Pages, the tech behind Google was truly revolutionary at the time.
+
+But their web design was decidedly not special. Check it out in the way back machine (choose 1998 for your time frame):
 
 [https://web.archive.org/web/19981202230410/http://www.google.com/](https://web.archive.org/web/19981202230410/http://www.google.com/)
 
@@ -18,7 +20,7 @@ Here's the design with a few visual notes on what is required for each part of t
 
 ![](./google-1998-marked-up.png)
 
-Your job is to recreate this. Feel free to save the image (right-click, save image as...) for your page. Then recreate the home page with forms and validation per the graphic above.
+Your job is to recreate this home page. Feel free to save the Google logo from the way back machine for your page (right-click, save image as...). Then recreate the home page with forms and validation per the graphic above.
 
 If you are unfamiliar with HTML tables, here's a primer:
 
@@ -26,14 +28,15 @@ If you are unfamiliar with HTML tables, here's a primer:
 <table border="0" width="90%">
 	<tr>
 		<td bgcolor="#EEEEEE">
-		    column details here...
+			column details here...
 		</td>
-        <td bgcolor="#EEEEEE">
-	        column details here...
-        </td>
 		<td bgcolor="#EEEEEE">
-		    column details here...
+			column details here...
 		</td>
+		<td bgcolor="#EEEEEE">
+			column details here...
+		</td>
+	</tr>
 </table>
 ```
 
