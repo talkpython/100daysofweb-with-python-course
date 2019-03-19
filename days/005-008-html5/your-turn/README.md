@@ -6,7 +6,7 @@ Now you have seen the videos from this chapter, you're ready to start experiment
 
 The watch the videos and keep track of where you might want to grab some examples. Remember you have everything you saw typed in the demos folder adjacent to this one if you need it.
 
-## Day 2: Recreate Google's homepage
+## Days 2-3: Recreate Google's homepage
 
 For your hands-on exercises during this chapter, you'll do something quick and easy: recreate Google! While I made fun of Yahoo! for being nothing but a glamorized Yellow Pages, the tech behind Google was truly revolutionary at the time.
 
