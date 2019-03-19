@@ -1,40 +1,48 @@
 # Days 5 - 8 HTML & HTML 5
 
-Now you have seen the videos from this chapter, you're ready to build a data-driven application using a database ORM - SQLAlchemy.
+Now you have seen the videos from this chapter, you're ready to start experimenting with HTML & HTML 5. But don't sweat the web design yet. We'll stay focused on the 90's for our sites so we get the native unstyled feel working for us.
 
 ## Day 1: Watch the video lessons
 
-The first half of this 4-day block is to watch the videos and study SQLAlchemy. Consider downloading and trying out the code samples developed during the course.
+The watch the videos and keep track of where you might want to grab some examples. Remember you have everything you saw typed in the demos folder adjacent to this one if you need it.
 
-## Day 2: Start your database project
+## Day 2: Recreate Google's homepage
 
-For this day, you will pick a database project from the following list of ideas. 
+For your hands-on exercises during this chapter, you'll do something quick and easy: recreate Google! While I made fun of Yahoo! for being nothing but a glamorized Yellow Pages, the tech behind Google was truly revolutionary at the time.
 
-https://web.archive.org/web/19981202230410/http://www.google.com/
+But there web design was decidedly not special. Check it out in the way back machine (choose 1998 for your time frame):
+
+[https://web.archive.org/web/19981202230410/http://www.google.com/](https://web.archive.org/web/19981202230410/http://www.google.com/)
+
+Here's the design with a few visual notes on what is required for each part of the page (yes, tables make a comeback). No really, view the source, it's tables and the center tag even!
 
 ![](./google-1998-marked-up.png)
 
-**[top-18-database-projects-ideas](https://www.lovelycoding.org/2013/11/top-18-database-projects-ideas-for.engineering-bca-mca-btech-bsc.html)**
+Your job is to recreate this. Feel free to save the image (right-click, save image as...) for your page. Then recreate the home page with forms and validation per the graphic above.
 
-This web page lists 18 different data modeling and database projects. Rather than us asking you do to one particular topic, you get to choose the one that resonates with you most. 
+If you are unfamiliar with HTML tables, here's a primer:
 
-Each topic on that site has a short description of the data to be modeled.
+```
+<table border="0" width="90%">
+	<tr>
+		<td bgcolor="#EEEEEE">
+		    column details here...
+		</td>
+        <td bgcolor="#EEEEEE">
+	        column details here...
+        </td>
+		<td bgcolor="#EEEEEE">
+		    column details here...
+		</td>
+</table>
+```
 
-**On this day 3**, you will model the data and create the basic project structure. This includes:
-
-* The classes that build the database model (SQLAlchemy entities)
-* Setup the connection to the DB (sqlite)
-* Put the unit of work pieces in place (session_factory, etc)
-
-Please refer to the demo code as an example for any of these steps:
-
-**[github.com/talkpython/100daysofweb-with-python-course](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/033-036-sqlalchemy-orm/demo/hovershare_app_final)**
 
 ## Day 4: Use the data model
 
-Now that you have the data model built and database connection setup, it's time to read and write some data.
+Imagine Google more like it is today, with services that require a dedicated account. 
 
-Finish your program by adding the ability to insert data (gotten from the user via `input()` perhaps or from importing other data relevant you found on the internet). Let the user ask questions about the data and answer them with queries (structured ones, not wide-open questions).
+Extend your basic Google homepage to have a register page (link to a second HTML file). Use what you learned about input validation and HTML forms to build the nicest registration form you can without worrying about design just yet.
 
 ### Time to share what you've accomplished!
 
