@@ -4,12 +4,35 @@ body {
     padding: 0;
 }
 
+.custom-nav li {
+    display: inline-block;
+    /* list items horizontal, padding 5 & 10 */
+    padding: 5px;
+    padding-right: 10px;
+}
+
+/* color background of nav to #222*/
+.custom-nav {
+    background-color: #222222;
+}
+
+/* style page hyperlinks bold */
+.page-content a {
+    font-weight: bold;
+}
+
 /* color list hyperlinks #aaa even when visited */
 /* color list hyperlinks white, no underline when hovered */
+.custom-nav a,
+.custom-nav a:visited {
+    color: #aaa;
+    text-decoration: none;
+}
+
 /* color list hyperlinks yellow, no underline when clicked */
-/* style page hyperlinks bold */
-/* color background of nav to #222*/
-/* list items horizontal, padding 5 & 10*/
+.custom-nav a:active {
+    color: yellow;
+}
 
 .page-content {
     font-size: 18px;
