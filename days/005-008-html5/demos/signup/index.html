@@ -15,10 +15,11 @@
 
 <form action="" method="post">
 
-    <input type="text" name="full_name" placeholder=" full name">
-    <input type="text" name="email" placeholder=" email">
-    <input type="text" name="password" placeholder=" password">
-    <select name="heard_of">
+    <input type="text" name="full_name" required placeholder=" full name">
+    <input type="email" name="email" required placeholder=" email">
+    <input type="password" minlength="6" name="password" required placeholder=" password">
+    <input type="number" min="18" name="age" required placeholder=" age in years">
+    <select name="heard_of" required>
         <option value="" selected>Please select an option</option>
         <option value="podcast">Podcast</option>
         <option value="search">Search engine</option>
