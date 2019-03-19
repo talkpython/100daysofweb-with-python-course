@@ -1,0 +1,18 @@
+
+body {
+    background-color: #ccc;
+    color: #222;
+}
+
+.content {
+    padding: 20px;
+    line-height: 1.25em;
+}
+
+.nav ul.dropdown > #profile_image {
+    width: 64px;
+}
+
+.content.lead {
+    font-size: 18px;
+}

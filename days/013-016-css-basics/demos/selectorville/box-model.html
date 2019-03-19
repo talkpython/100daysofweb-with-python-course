@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intro to web design foundations demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom styles for this scaffold -->
+    <link href="static/css/theme.css" rel="stylesheet">
+    <link href="static/css/site.css" rel="stylesheet">
+
+</head>
+
+<body>
+<h1 style="text-align:center;"><a href="index.html">Design Foundations: CSS Box Model</a></h1>
+<div class="content">
+
+    <div style="text-align: center;">
+        <input class="form-control" type="text" id="margin" style="width: 120px; display: inline-block;"
+               placeholder="margin (px)">
+        <input class="form-control" type="text" id="padding" style="width: 120px; display: inline-block;"
+               placeholder="padding (px)">
+        <input class="form-control" type="text" id="border" style="width: 120px; display: inline-block;"
+               placeholder="border (px)">
+        <button class="btn btn-success">Set values</button>
+    </div>
+    <hr>
+    <br>
+    <div class="test_content">
+
+        <div class="outside">
+            <div class="inside">
+                <div class="contained">Content!</div>
+            </div>
+        </div>
+
+        <br>
+        <div class="msg" style="text-align: center"></div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<script src="static/js/box.js"></script>
+</body>
+</html>

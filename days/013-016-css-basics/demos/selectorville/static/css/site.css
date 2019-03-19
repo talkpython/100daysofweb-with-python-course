@@ -1,0 +1,42 @@
+/*********** SHARED STYLES ****************/
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: black;
+    padding: 0 20px 20px;
+    background: white;
+}
+
+.content {
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+/*********** SELECTORS DEMO ****************/
+.selected {
+    background-color: #ffffa0;
+    border: 3px solid yellow;
+}
+
+/*********** BOX DEMO ****************/
+.outside {
+    background: gray;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.inside {
+    background: lightblue;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    border: 0 solid red;
+}
+
+.contained {
+    background: #222;
+    color: yellow;
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+}
