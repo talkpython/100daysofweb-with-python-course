@@ -4,27 +4,14 @@ body {
     padding: 0;
 }
 
-ol {
-    background-color: #222;
-}
+/* color list hyperlinks #aaa even when visited */
+/* color list hyperlinks white, no underline when hovered */
+/* color list hyperlinks yellow, no underline when clicked */
+/* style page hyperlinks bold */
+/* color background of nav to #222*/
+/* list items horizontal, padding 5 & 10*/
 
-li {
-    display: inline-block;
-    padding: 5px;
-    padding-right: 10px;
+.page-content {
+    font-size: 18px;
+    padding: 10px;
 }
-
-li a, li a:visited {
-    color: #aaa;
-}
-
-li a:hover {
-    color: white;
-    text-decoration: none;
-}
-
-li a:active {
-    color: yellow;
-    text-decoration: none;
-}
-

@@ -4,11 +4,6 @@ body {
     padding: 0;
 }
 
-img {
-    float: right;
-    height: 128px;
-}
-
 #top-div {
     background-color: #222;
     color: white;
@@ -16,6 +11,11 @@ img {
     padding: 10px;
 }
 
-p {
+a {
+    font-weight: bold;
+}
+
+.page-content {
+    font-size: 18px;
     padding: 10px;
 }
