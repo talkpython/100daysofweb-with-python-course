@@ -1,4 +1,4 @@
-# Building your first Javascript app
+# Day 25 – JavaScript Introduction
 
 In the coming 4 days you are going to write some 'Vanilla' (pure / no frameworks) Javascript.
 
