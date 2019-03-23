@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS is Fun!</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /* write a function to sum numbers, if no argument is provided
+    default summing a range of 1..100 - write a second function
+    called range to return that range of integers */
+
+  function range(start, end){
+    elements = [];
+    for(let i = start; i <= end; i += 1){
+      elements.push(i);
+    }
+    return elements;
+  }
+
+  function sum(numbers){
+    if(numbers === undefined){
+      numbers = range(1, 100);
+    }
+
+    let total = 0;
+    for(let i in numbers){
+      total += numbers[i];
+    }
+    return total;
+  }
+
+  // with argument
+  let ages = [11, 18, 25, 17, 33];
+  console.log(sum(ages)); // 104
+
+  // without argument
+  console.log(sum()); // 5050 default
+  </script>
+</body>
+</html>

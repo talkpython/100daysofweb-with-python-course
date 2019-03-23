@@ -1,0 +1,21 @@
+th, td {
+  text-align: left;
+}
+#logo {
+  position: relative;
+  top: 10px;
+  right: 15px;
+}
+#content-wrapper {
+  margin: 20px;
+}
+.delete {
+  background: url('../img/delete.png') no-repeat top left;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.bold {
+  font-weight: bold;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diet Damage Control Tool</title>
+  <link href="css/mui.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/auto-complete.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div class="mui--bg-danger" style="height:10px;"></div>
+  <div id="content-wrapper" class="mui--text-center">
+
+    <h1 class="mui--text-display1"><img id="logo" src="img/le_bigmac.png" alt="junk food">Diet Damage Control Tool</h1>
+    <div class="mui-divider"></div>
+    <br>
+
+    <form id="foodPickerForm" class="mui-form">
+      <div class="mui-textfield">
+        <input name="foodPicker" id="foodPicker" placeholder='Select food'>
+      </div>
+      <button type="submit" class="mui-btn mui-btn--primary" type="button">Add Food</button>
+    </form>
+
+    <br><div class="mui--text-body2" id="foodInfo"></div>
+
+    <div class="mui-divider"></div><br>
+
+    <div id="foodBalanceWrapper">
+      <table id="foodBalanceTable" class="mui-table mui-panel">
+        <thead>
+          <th>Food</th>
+          <th colspan="2">Kcal</th>
+        </thead>
+        <tbody id="foodBalanceBody"></tbody>
+      </table>
+      <p id="totalWrapper" class="mui--text-display1">You consumed <span class="bold" id="total"></span> calories eating Fast Food</p>
+    </div>
+
+  </div>
+
+  <script src="js/mui.min.js"></script>
+  <script src="js/auto-complete.min.js"></script>
+  <script src="js/food.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

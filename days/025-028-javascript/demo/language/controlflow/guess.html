@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Can you drive?</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /* write a simple number guessing game:
+     - use 'prompt' to ask for a number, covert it to int (parseInt)
+     - if guess === null or 'q', exit (user escapes / cancels)
+     - if not a number continue
+     - if number == secretNumber, print 'You guessed it!' (use console.log)
+     - if number < secretNumber, print 'Too low'
+     - if number > secretNumber, print 'Too high'
+     - bonus: count the number of attempts, and exit upon the 5th guess
+  */
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const secretNumber = getRandomInt(1, 15);
+
+  // you code
+
+  </script>
+</body>
+</html>

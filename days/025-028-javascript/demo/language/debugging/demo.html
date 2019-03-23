@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS is Fun!</title>
+  <style>
+    body {
+      width: 800px;
+      margin: 0 auto;
+    }
+    #result {
+      font-size: 200%;
+      font-weight: bold;
+    }
+    #calculateForm {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Basic JS Calculator</h1>
+
+  <form id="calculateForm">
+    <input id="num1">
+    <input id="num2">
+    <button type="button" id="calculate" onclick="sumNumbers();">Sum!</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script type="text/javascript">
+  function sumNumbers(){
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+
+    let result = num1 + num2;
+
+    document.getElementById("result").innerHTML = result;
+  }
+  </script>
+
+</body>
+</html>
