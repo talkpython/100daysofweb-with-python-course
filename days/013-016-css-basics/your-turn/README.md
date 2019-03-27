@@ -1,51 +1,55 @@
 # Days 13 - 16: CSS Basics
 
-Now you have seen the videos from this chapter, you're ready to start experimenting with HTML & HTML 5. But don't sweat the web design yet. We'll stay focused on the 90's for our sites so we get the native unstyled feel working for us.
+Now you have seen the videos from this chapter, you're ready to start exploring the world of CSS.
 
 ## Day 1: Watch the video lessons
 
 The watch the videos and keep track of where you might want to grab some examples. Remember you have everything you saw typed in the demos folder adjacent to this one if you need them.
 
-## Days 2-3: Recreate Google's homepage
+## Days 2: Play with the selectors
 
-For your hands-on exercises during this chapter, you'll do something quick and easy: recreate Google! 
+Today you get to play with CSS selectors. These are incredibly important because the way you target elements in CSS files are by specifying the selectors.
 
-While I made fun of Yahoo! for being nothing but a glamorized Yellow Pages, the tech behind Google was truly revolutionary at the time.
+Open the selector section of our demo app (from the videos). It's located adjacent to this foyer:
 
-But their web design was decidedly not special. Check it out in the way back machine (choose 1998 for your time frame):
+`013-016-css-basics/demos/selectorville/selectors.html`
 
-[https://web.archive.org/web/19981202230410/http://www.google.com/](https://web.archive.org/web/19981202230410/http://www.google.com/)
+Remember that you can just open that file directory from your hard drive.
 
-Here's the design with a few visual notes on what is required for each part of the page (yes, tables make a comeback). No really, view the source, it's tables and the center tag even!
+Use the "What can I use" dialog to find some interesting things to query and highlight. Look at the source code of the HTML file to find other interesting CSS selectors to run as well.
 
-![](./google-1998-marked-up.png)
+## Day 3: Build a nav out of a UL
 
-Your job is to recreate this home page. Feel free to save the Google logo from the way back machine for your page (right-click, save image as...). Then recreate the home page with forms and validation per the graphic above.
+In the Layout demo part of the you saw that we can convert a HTML list into a navigational element by changing the display and other CSS properties.
 
-If you are unfamiliar with HTML tables, here's a primer:
+On this day, use a similar technique to convert a list of hyperlinks into the Talk Python To Me podcast's site navigation:
 
-```
-<table border="0" width="90%">
-	<tr>
-		<td bgcolor="#EEEEEE">
-			column details here...
-		</td>
-		<td bgcolor="#EEEEEE">
-			column details here...
-		</td>
-		<td bgcolor="#EEEEEE">
-			column details here...
-		</td>
-	</tr>
-</table>
-```
+![](talk-python-nav.png)
 
+Don't worry about the big image below or the Linode ad banner. Just recreate the nav over at [https://talkpython.fm/](https://talkpython.fm/) from something like:
 
-## Day 4: Use the data model
+- TalkPython['Podcast']
+- Episodes
+- Python Courses
+- Friends of the show
+- Patreon
+- Contact
 
-Imagine Google more like it is today, with services that require a dedicated account. 
+Bonus points if you can recreate the search graphic using [font-awesome](https://fontawesome.com/icons) (as it was originally created).
 
-Extend your basic Google homepage to have a register page (link to a second HTML file). Use what you learned about input validation and HTML forms to build the nicest registration form you can without worrying about design just yet.
+## Day 4: Research Bootstrap themes
+
+While we did not have time to cover [Bootstrap](https://getbootstrap.com/) and the rich theme ecosystem, it is very helpful when building web applications and speeding up the design process.
+
+So, this day is to dream a little. Imagine some cool business or product you'd like to create some day or maybe your company is working on but has a poor design. 
+
+Then visit Wrap Bootstrap, a commercial theme site:
+
+[https://wrapbootstrap.com/](https://wrapbootstrap.com/)
+
+Yes, you would have to buy these themes, but they are often just $20 once for a whole web design. Your goal is to search around here and find 3 potential themes as the starting point for your new website for your product or service.
+
+You don't have to build anything. We just want you to get a little exposure to the idea of themes and Bootstrap.
 
 ### Time to share what you've accomplished!
 

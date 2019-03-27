@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>My top 10 quotes on living life better | Virgin</title>
+</head>
+</body>
+  <div class="content">
+
+    <p>Here are my top 10 quotes on living life better for some New Year inspiration:</p>
+
+    <ul id="quotes">
+      <li>10. "The beautiful thing about learning is nobody can take it away from you." - B.B King</li>
+      <li>9. "Inexperience is an asset. Embrace it." - Wendy Kopp</li>
+      <li>8. "Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we’ve been waiting for. We are the change that we seek." - Barack Obama</li>
+      <li>7. "The sky is not my limit… I am." - T.F. Hodge</li>
+      <li>6. "Life is either a daring adventure or nothing at all." - Helen Keller</li>
+      <li>5. "It does not matter how slowly you go as long as you do not stop." - Confucius</li>
+      <li>4. "Too many of us are not living our dreams because we are living our fears." - Les Brown</li>
+      <li class="churchill">3. "Continuous efforts – not strength or intelligence – is the key to unlocking our potential." - Winston Churchill</li>
+      <li>2. "Believe you can and you’re halfway there." - Theodore Roosevelt</li>
+      <li>1. "Success means doing the best we can with what we have. Success is the doing, not the getting, in the trying, not the triumph. Success is a personal standard, reaching for the highest that is in us, becoming all that we can be." - Zig Ziglar</li>
+    </ul>
+
+    <p id="more">-</p>
+  </div>
+
+  <script type="text/javascript">
+  // 1a. get the p tag with id "more"
+  // document.getElementById("more").innerHTML = "How do you try and live a healthier, happier life?";
+
+  // 1b. get all p tags
+  // let paragraphs = document.getElementsByTagName('p');
+  // console.log(paragraphs);
+  // console.log(paragraphs.length);
+  // alert(paragraphs[0].innerHTML);
+
+  // ... and get all li tags 
+  // let quotes = document.getElementsByTagName('li');
+  // console.log(quotes.length);
+  // alert(quotes[0].innerHTML);
+
+  // 1c. get a tag by class name
+  // console.log(document.getElementsByClassName('churchill')[0].innerHTML);
+   
+  // 2. write the quotes back in order
+  // let quoteUl = document.getElementById('quotes');
+  // console.log("quoteUl");
+  // quoteUl.innerHTML = "New text!";
+
+  //quotes = Array.from(quotes).reverse();  // need to cast htmlCollection
+
+  /*
+  for(let i=0; i < quotes.length; i++){
+    // console.log(quotes[i].innerHTML);
+    quoteUl.appendChild(quotes[i]);
+  }
+  */
+  
+  // 3. add a new quote
+  /*let newQuote = document.createTextNode('11. "Fortunately, JavaScript has some extraordinarily good parts. ' +
+                                         'In JavaScript, there is a beautiful, elegant, highly expressive language ' +
+                                         'that is buried under a steaming pile of good intentions and blunders."' +
+                                         ' - Douglas Crockford');
+  let newLi = document.createElement("li");
+  newLi.appendChild(newQuote);
+  quoteUl.appendChild(newLi);
+  quotes.push(newLi); // let's also update the quotes array for next section
+  console.log(quotes.length);
+  */
+
+  // 4. rm last quote
+  // quoteUl.removeChild(newLi);
+
+  // 5. color the even quotes
+  /*
+  for (let i=0; i < quotes.length; i++){
+      // console.log(quotes[i]);
+      if(i % 2 === 0){
+        quotes[i].style.color = "#B03A2E";
+      } else {
+        quotes[i].style.color = "#AF7AC5";
+      }
+  }
+  */
+
+  // 6. add behavior / event listener
+  /*
+  for (let i=0; i < quotes.length; i++){
+    quotes[i].addEventListener("click", function(event){
+      let targetElement = event.target || event.srcElement;
+      let tweetUrl = 'https://twitter.com/intent/tweet?text='+encodeURI(targetElement.innerHTML);
+      window.open(tweetUrl, '_blank');
+    });
+  }
+  document.getElementById("more").innerHTML += ' Click on the quotes to share them out to Twitter!';
+  */
+
+  </script>
+</body>
+</html>
+

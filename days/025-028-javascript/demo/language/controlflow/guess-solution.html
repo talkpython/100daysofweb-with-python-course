@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Can you drive?</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /* write a simple number guessing game:
+     - use 'prompt' to ask for a number, covert it to int (parseInt)
+     - if guess === null or 'q', exit (user escapes / cancels)
+     - if not a number continue
+     - if number == secretNumber, print 'You guessed it!' (use console.log)
+     - if number < secretNumber, print 'Too low'
+     - if number > secretNumber, print 'Too high'
+     - bonus: count the number of attempts, and exit upon the 5th guess
+  */
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const secretNumber = getRandomInt(1, 15);
+
+  console.log('Guess the secret number: ');
+
+  const maxAttempts = 5;
+  let numGuesses = 0;
+
+  while(true){
+    let guess = prompt('Enter a number: ');
+
+    console.log(parseInt(guess));
+    console.log(typeof parseInt(guess));
+
+    if(guess === null || guess === 'q'){
+      console.log('Bye');
+      break;
+    }
+
+    guess = parseInt(guess);
+    if(isNaN(guess)){
+      console.log('Not a number, please try again');
+      continue;
+    }
+
+    numGuesses += 1;
+
+    if(guess === secretNumber){
+      console.log('You guessed it! # attempts: ' + numGuesses);
+      break;
+    } else if(guess < secretNumber) {
+      console.log('Too low');
+    } else {
+      console.log('Too high');
+    }
+
+    if(numGuesses === maxAttempts){
+      console.log('Max number of attempts used, game over');
+      break;
+    }
+  }
+  </script>
+</body>
+</html>
