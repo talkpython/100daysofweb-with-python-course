@@ -25,7 +25,7 @@ Build up your site over the remaining two days. You have the building blocks wit
 - Create another few static pages. Eg: Privacy Policy; Terms and Conditions; Related Links
 - Experiment with the HTML/CSS.
 - Browse to [http://www.pelicanthemes.com/](http://www.pelicanthemes.com/) and pick a new theme! We use [Flex](https://github.com/alexandrevicenzi/Flex/tree/b3bd59002a3e85803332c35702d90e1e19ef39b6) on [PyBites](https://pybit.es).
-- Visit the [Pelican docs](http://docs.getpelican.com/en/stable/index.html) and take a look at the [Pelican Themes])http://docs.getpelican.com/en/stable/pelican-themes.html) documentation to install the new theme you've selected.
+- Visit the [Pelican docs](http://docs.getpelican.com/en/stable/index.html) and take a look at the [Pelican Themes](http://docs.getpelican.com/en/stable/pelican-themes.html) documentation to install the new theme you've selected.
 - Customise and make it your own.
 
 Note: Remember to keep your repository up to date on GitHub to allow Netlify to keep auto-building/updating.
