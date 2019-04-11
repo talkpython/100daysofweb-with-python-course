@@ -23,7 +23,7 @@ Remember to use [create-react-app](https://github.com/facebook/create-react-app)
 
 ## Day 3
 
-Continuing with videos 11-19 we are going to learn more about state in React apps and the ideal way to demo this is by building a game ([the React tutorial](https://reactjs.org/tutorial/tutorial.html) also teaches by building a game!). 
+Continuing with videos 11-17 we are going to learn more about state in React apps and the ideal way to demo this is by building a game ([the React tutorial](https://reactjs.org/tutorial/tutorial.html) also teaches by building a game!). 
 
 When I was learning Java I made a hangman variant called [Free Monkey](https://play.google.com/store/apps/details?id=com.bobbelderbos.freemonkey&hl=pa) and today I will demo a simplified version using React. 
 
@@ -31,7 +31,7 @@ You can check out the demo code [here](demo/freemonkey).
 
 ## Day 4
 
-Accompanying video 20: it's time again to put into practice what you've learned yesterday. Can you build a simple game using React? 
+Accompanying video 18: it's time again to put into practice what you've learned yesterday. Can you build a simple game using React? 
 
 If this still feels intimidating at this point I encourage you to just go through [the code of this lesson](demo/freemonkey) and/or the tic-tac-toe game of the [Intro to React tutorial](https://reactjs.org/tutorial/tutorial.html). 
 
