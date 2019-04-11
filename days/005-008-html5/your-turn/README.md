@@ -41,7 +41,7 @@ If you are unfamiliar with HTML tables, here's a primer:
 ```
 
 
-## Day 4: Use the data model
+## Day 4: Add a login form
 
 Imagine Google more like it is today, with services that require a dedicated account. 
 
