@@ -1,3 +1,11 @@
+# Tips API
+
+![tips API front-end screenshot](../screenshots/tips.png)
+
+-- 
+
+# Original `create-react-app` README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
