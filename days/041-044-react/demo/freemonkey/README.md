@@ -1,6 +1,8 @@
-# Tips API
+# Free Monkey Game
 
-![tips API front-end screenshot](../screenshots/tips.png)
+Check out the code [here](src/App.js).
+
+![Free Monkey game screenshot](../screenshots/freemonkey.png)
 
 -- 
 
