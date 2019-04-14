@@ -1,32 +1,36 @@
-# Days 029-032 Static Site Generators
+# Days 073-076 Web Scraping
 
-Welcome to Static Site Generators!
+Welcome to Web Scraping!
 
-Over the next four days we're going to play with Pelican - a Python based Static Site Generator. After we build our base site we're also going to look at deploying the site online using Netlify!
+The next four days will be based on BeautifulSoup4 (bs4) and Newspaper3k.
 
 ## Days 1 - 2: 
 
-We're taking a slightly different approach for this chapter.
+The first two days will be spent on bs4.
 
-Given the nature of the videos in this chapter we're asking that over the first two days you simply watch and follow along with the videos.
+Day 1: Watch bs4 videos 3 - 5 on the first day and follow along. Try your hand at scraping additional data from the Talk Python Course listing page.
 
-There's no need to dive too far into the coding, just get the site up and running and deployed on Netlify. Take the two days to do this.
-
-Add some extra posts to the site if you have spare time and can't wait until Days 3 - 4.
+Day 2: Scrape your own sites! bs4 is extremely simple so you'll be able to take what you learned on Day 1 and apply it to websites of your choice.
 
 
 ## Days 3 - 4: 
 
-Play time!
+Introducing newspaper3k.
 
-Build up your site over the remaining two days. You have the building blocks with static images and pages - now build!
+Day 1: Follow along with the remaining videos, 6 - 8, and finish off the course.
 
-- Add posts to bulk out your site.
-- Create another few static pages. Eg: Privacy Policy; Terms and Conditions; Related Links
-- Experiment with the HTML/CSS.
-- Browse to [http://www.pelicanthemes.com/](http://www.pelicanthemes.com/) and pick a new theme! We use [Flex](https://github.com/alexandrevicenzi/Flex/tree/b3bd59002a3e85803332c35702d90e1e19ef39b6) on [PyBites](https://pybit.es).
-- Visit the [Pelican docs](http://docs.getpelican.com/en/stable/index.html) and take a look at the [Pelican Themes](http://docs.getpelican.com/en/stable/pelican-themes.html) documentation to install the new theme you've selected.
-- Customise and make it your own.
+After completing the example in the video, practice on other news articles of your choice. Get some practice in.
+
+Day 2: Head to [http://newspaper-demo.herokuapp.com](http://newspaper-demo.herokuapp.com). This is the site used in the video to demo newspaper3k.
+
+Reproduce this page using the Flask skills you've already learned in this course so far.
+
+Tips:
+
+- You're essentially just parsing the newspaper3k page for Authors; Publish Date; Text and Image.
+- Decide whether you want the page to reload once the URL is entered or if you want to direct the user to a new page that renders the content.
+- Don't fret if you can't get the page returning the exact same info, just do what you can.
+- Focus more on the code/content than the HTML/CSS. We don't care how pretty this is.
 
 Note: Remember to keep your repository up to date on GitHub to allow Netlify to keep auto-building/updating.
 
