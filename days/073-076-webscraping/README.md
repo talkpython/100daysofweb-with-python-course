@@ -17,11 +17,11 @@ Day 2: Scrape your own sites! bs4 is extremely simple so you'll be able to take 
 
 Introducing newspaper3k.
 
-Day 1: Follow along with the remaining videos, 6 - 8, and finish off the course.
+Day 3: Follow along with the remaining videos, 6 - 8, and finish off the course.
 
 After completing the example in the video, practice on other news articles of your choice. Get some practice in.
 
-Day 2: Head to [http://newspaper-demo.herokuapp.com](http://newspaper-demo.herokuapp.com). This is the site used in the video to demo newspaper3k.
+Day 4: Head to [http://newspaper-demo.herokuapp.com](http://newspaper-demo.herokuapp.com). This is the site used in the video to demo newspaper3k.
 
 Reproduce this page using the Flask skills you've already learned in this course so far.
 
