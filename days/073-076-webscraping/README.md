@@ -32,8 +32,6 @@ Tips:
 - Don't fret if you can't get the page returning the exact same info, just do what you can.
 - Focus more on the code/content than the HTML/CSS. We don't care how pretty this is.
 
-Note: Remember to keep your repository up to date on GitHub to allow Netlify to keep auto-building/updating.
-
 
 ### Time to share what you've accomplished!
 
