@@ -2,7 +2,7 @@
 
 Welcome to Web Scraping!
 
-The next four days will be based on BeautifulSoup4 (bs4) and Newspaper3k.
+The next four days will be based on [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#) (bs4) and [Newspaper3k](https://newspaper.readthedocs.io/en/latest/).
 
 ## Days 1 - 2: 
 
