@@ -2,7 +2,7 @@
 
 Welcome to Twilio!
 
-## Days 1: 
+## Day 1: 
 
 In this single day chapter you're going to create and configure your very own Twilio account!
 
