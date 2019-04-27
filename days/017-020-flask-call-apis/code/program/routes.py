@@ -3,7 +3,6 @@ from program import app
 from datetime import datetime
 from pprint import pprint
 import requests
-import json
 
 timenow = str(datetime.today())
 
