@@ -12,7 +12,7 @@ For this day, you will get a data set from [Mockaroo](https://mockaroo.com/) or 
 
 Data is everywhere, but if you don't get inspiration maybe you can use this [Marvel dataset](https://raw.githubusercontent.com/pybites/marvel_challenge/master/marvel-wikia-data.csv) we used for one of our code challenges. If you don't know how to parse CSV, no worries: the same repo [has code for this](https://github.com/pybites/marvel_challenge/blob/solution/marvel.py).
 
-Next make a virtual env, activate it and `pip install apistar` as shown in the videos (of course you can also use `pipenv` or `Anaconda`).
+Next make a virtual env, activate it and `pip install apistar==0.5.41` as shown in the videos (of course you can also use `pipenv` or `Anaconda`).
 
 Then start to build your API using the skeleton from my demo. Try to implement the `GET` endpoint today (both all items and single item).
 
