@@ -1,4 +1,4 @@
-# Days 09-12 Building APIs with Api Star
+# Days 09-12 Building APIs with Api Star (0.5.x)
 
 Now you have seen the videos from this chapter, you're ready to build an API using API Star!
 
