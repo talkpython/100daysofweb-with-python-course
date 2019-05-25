@@ -27,7 +27,7 @@
 
             <a class="top_10" @click="top_10()">Top 10</a>
 
-            <select v-model="selected_genre"
+            <select v-model="search_text"
                     @change="load_genre(selected_genre)">
                 <option v-for="g in genres" :value="g">{{g}}</option>
             </select>
