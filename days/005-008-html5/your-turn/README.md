@@ -14,7 +14,7 @@ While I made fun of Yahoo! for being nothing but a glamorized Yellow Pages, the 
 
 But their web design was decidedly not special. Check it out in the way back machine (choose 1998 for your time frame):
 
-[https://web.archive.org/web/19981202230410/http://www.google.com/](https://web.archive.org/web/19981202230410/http://www.google.com/)
+[http://web.archive.org/web/19981202230410/http://www.google.com/](http://web.archive.org/web/19981202230410/http://www.google.com/)
 
 Here's the design with a few visual notes on what is required for each part of the page (yes, tables make a comeback). No really, view the source, it's tables and the center tag even!
 
