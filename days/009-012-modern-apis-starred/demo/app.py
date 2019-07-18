@@ -36,7 +36,7 @@ def list_cars() -> List[Car]:
 
 
 def create_car(car: Car) -> JSONResponse:
-    car_id = len(cars) + 1
+    car_id = max(cars.keys())+1
     car.id = car_id
     cars[car_id] = car
     return JSONResponse(Car(car), status_code=201)

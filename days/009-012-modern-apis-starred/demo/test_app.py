@@ -10,7 +10,8 @@ def test_list_cars():
     assert response.status_code == 200
 
     json_resp = response.json()
-    assert len(json_resp) == 1000
+    car_count = len(cars)
+    assert len(json_resp) == car_count
 
     expected = {'id': 1, 'manufacturer': 'Mercedes-Benz',
                 'model': '500SEC', 'year': 1993,
@@ -19,13 +20,14 @@ def test_list_cars():
 
 
 def test_create_car():
+    car_count = len(cars)
     data = {'manufacturer': 'Honda',
             'model': 'some_model',
             'year': 2018}
 
     response = client.post('/', data=data)
     assert response.status_code == 201
-    assert len(cars) == 1001
+    assert len(cars) == car_count + 1
 
     response = client.get('/1001/')
     expected = {'id': 1001, 'manufacturer': 'Honda',
@@ -44,7 +46,21 @@ def test_create_car():
 
     response = client.get('/1002/')
     assert response.json() == expected
-    assert len(cars) == 1002
+    assert len(cars) == car_count + 2
+
+
+def test_create_car_after_delete():
+    """Test to fail create_car's len(cars)+1 (fix max(cars.keys())+1)"""
+    car_count = len(cars)
+    response = client.delete(f'/99/')
+    assert response.status_code == 204
+    assert len(cars) == car_count - 1
+    data = {'manufacturer': 'Honda',
+            'model': 'blabla',
+            'year': 2019}
+    response = client.post('/', data=data)
+    assert response.status_code == 201
+    assert len(cars) == car_count
 
 
 def test_create_car_missing_fields():
@@ -129,7 +145,6 @@ def test_update_car_validation():
 
 def test_delete_car():
     car_count = len(cars)
-
     for i in (11, 22, 33):
         response = client.delete(f'/{i}/')
         assert response.status_code == 204
