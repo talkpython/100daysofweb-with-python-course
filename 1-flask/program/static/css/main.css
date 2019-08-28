@@ -1,3 +1,14 @@
+p {
+   color: green;
+}
+
+.ma__main-nav__subitems {
+   position: fixed;
+   top: 0;
+   text-align: left;
+   width: 300px;
+   z-index: $z-dropdown;
+}
 .ma__main-nav {
   @include ma-container;
 
