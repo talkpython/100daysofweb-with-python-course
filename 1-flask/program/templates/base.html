@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session explorer (extremely Beta)</title>
+    <link href="nav.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <li role="menuitem" class="ma__main-nav__item  has-subnav  tabindex="-1">
+                  <button id="button1 class="ma__main-nav__top-link" aria-haspopup="true" aria-expanded="false" tabindex="0"><span class="visually-hidden show-label">Show the sub topics of </span>Working</button>
+          <div class="ma__main-nav__subitems js-main-nav-content is-closed" style="display: block;">
+            <ul id="menu2" role="menu" aria-labelledby="button2" class="ma__main-nav__container">
+              <li role="menuitem" class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Working</a></li>
+                              <li class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Unemployment</a></li>
+                              <li class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Finding a Job</a></li>
+                              <li class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Worker’s Rights &amp; Safety</a></li>
+                              <li class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Business Services &amp; Resources</a></li>
+                              <li class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Professional Licensing &amp; Certification</a></li>
+                              <li class="ma__main-nav__subitem"><a href="#" class="ma__main-nav__link">Professional Training</a></li>
+                            <li class="ma__main-nav__subitem" role="menuitem">
+                <a href="#" class="ma__main-nav__link">
+                  <svg aria-hidden="true"><use xlink:href="#3a020189bf520c00673d663669ea7585.1"></use></svg><svg xmlns="http://www.w3.org/2000/svg" style="display: none"><symbol xmlns="http://www.w3.org/2000/svg" aria-hidden="true" version="1.1" viewBox="0 0 20 21" id="3a020189bf520c00673d663669ea7585.1"><path d="M135.721 597.277V597.277L138.423 600V600V600L135.721 602.724V602.724L130.318 608.1690000000001L127.61700000000002 605.4470000000001L131.115 601.9190000000001H121.44300000000001V598.0680000000001H131.103L127.61600000000001 594.5530000000001L130.318 591.8300000000002ZM122.882 588.322V601.994H119.105V588.3340000000001Z " fill-opacity="1" transform="matrix(1,0,0,1,-119,-588)"></path></symbol></svg>
+                  <span>
+                    <span class="visually-hidden">See all topics under </span>
+                    Working
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+              </li>
+    <!--begin main content -->
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
