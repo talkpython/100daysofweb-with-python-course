@@ -28,9 +28,9 @@ def __import_scooters():
         'Hover-1 2nd edition',
         'Hover-1 Sport 2nd edition',
         'Hover-1 Touring 2nd edition',
-        'Hover-1 3nd edition',
-        'Hover-1 Sport 3nd edition',
-        'Hover-1 Touring 3nd edition',
+        'Hover-1 3rd edition',
+        'Hover-1 Sport 3rd edition',
+        'Hover-1 Touring 3rd edition',
     ]
 
     vin_values = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
