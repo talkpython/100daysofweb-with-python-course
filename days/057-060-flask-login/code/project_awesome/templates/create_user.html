@@ -1,0 +1,27 @@
+<html>
+   <head>
+      <title>Create User Page</title>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+	 <ul class=flashes>
+	 {% for message in messages %}
+	    <li>{{ message }}</li>
+	 {% endfor %}
+	 </ul>
+	 {% endif %}
+      {% endwith %}
+   <head>
+
+   <body>
+      <h1>This is a page where we can create a new user</h1>
+
+      <div>
+         <form method="POST" action="/create_user">
+	    <label for="User Creation">Create your User</label><br>
+	    <input type="text" name="username" placeholder="Eg: TheRealBob"><br>
+	    <input type="text" name="password" placeholder="Eg: not-abc123"><br>
+	    <button type="submit" value="Submit">Submit</button>
+	 </form>
+      </div>
+   </body>
+</html>

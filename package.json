@@ -1,0 +1,22 @@
+{
+  "name": "web100-demos",
+  "version": "1.0.0",
+  "description": "![](https://raw.githubusercontent.com/talkpython/100daysofweb-with-python-course/master/readme_resources/100days-web.png?token=AAPQ62OROPS5REVP3COFPSS4ZIIEW)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talkpython/100daysofweb-with-python-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talkpython/100daysofweb-with-python-course/issues"
+  },
+  "homepage": "https://github.com/talkpython/100daysofweb-with-python-course#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}

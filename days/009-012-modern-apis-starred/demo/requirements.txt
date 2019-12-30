@@ -1,2 +1,2 @@
-apistar
+apistar>=0.5.41,<0.5.1000
 pytest

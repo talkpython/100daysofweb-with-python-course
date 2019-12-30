@@ -1,7 +1,7 @@
 click==6.7
 Flask==1.0.2
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2>=2.10.1
 MarkupSafe==1.0
 python-dotenv==0.9.1
-Werkzeug==0.14.1
+werkzeug>=0.15.3

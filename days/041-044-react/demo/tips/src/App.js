@@ -78,7 +78,7 @@ class App extends Component {
     })
   }
 
-  filterTips = (filterStr) => {
+  filterTips(filterStr){
     let tips = []
     for(const tip of this.state.orgTips){
       if(tip.tip && tip.tip.toLowerCase().includes(filterStr) ||
