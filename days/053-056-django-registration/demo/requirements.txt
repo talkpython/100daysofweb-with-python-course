@@ -1,2 +1,2 @@
-django
-django-registration
+django==2.2
+django-registration==3.0.1
