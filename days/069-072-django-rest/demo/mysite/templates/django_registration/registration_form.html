@@ -14,19 +14,40 @@
   <div class="mui-textfield">
     {{ form.username.label }}
     {{ form.username }}
+    <div class="mui--text-danger">
+      {% for error in form.username.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
   </div>
   <div class="mui-textfield">
     {{ form.email.label }}
     {{ form.email }}
+    <div class="mui--text-danger">
+      {% for error in form.email.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
   </div>
   <div class="mui-textfield">
     {{ form.password1.label }}
     {{ form.password1 }}
+    <div class="mui--text-danger">
+      {% for error in form.password1.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
   </div>
   <div class="mui-textfield">
     {{ form.password2.label }}
     {{ form.password2 }}
+    <div class="mui--text-danger">
+      {% for error in form.password2.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
   </div>
+  <!-- {{ form.as_p }} -->
 
   <input class="mui-btn mui-btn--primary" type="submit" value="{% trans 'Submit' %}" />
 </form>
