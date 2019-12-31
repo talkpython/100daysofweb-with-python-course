@@ -20,11 +20,11 @@ Then start to build your API using the skeleton from my demo. Try to implement t
 
 Next continue your API implementing the other CRUD operations: `POST`, `PUT` (update) and `DELETE` (**note** `PUT` requests require a trailing slash!). Make sure you add `404`s (data not there) where applicable.
 
-Maybe you want to add some custom validations as well (like the manufacturer `enum` example in the lesson). See the [API Star docs](https://docs.apistar.com/api-guide/type-system/).
+Maybe you want to add some custom validations as well (like the manufacturer `enum` example in the lesson). See the [API Star docs](https://docs.apistar.com/type-system/).
 
 Install [Postman](https://www.getpostman.com/) and run the different methods against various endpoints, do they all return the expected data and status codes?
 
-If you have time left try to write some tests to automate the previous step. I recommend using `pytest` but that is not required. You probably do want to use [Api Star's TestClient](https://docs.apistar.com/api-guide/testing/) for convenience.
+If you have time left try to write some tests to automate the previous step. I recommend using `pytest` but that is not required. You probably do want to use [Api Star's TestClient](https://github.com/encode/apistar/blob/version-0.5.x/docs/api-guide/testing.md) for convenience (*note* this works for the version we are using in this lesson = 0.5, [starting 0.6 it's deprecated](https://docs.apistar.com/#where-did-the-server-go)).
 
 Good luck and remember: _the learning is in the practice_.
 
