@@ -18,7 +18,7 @@ Then start to build your API using the skeleton from my demo. Try to implement t
 
 ## Day 4: Flesh out (and test) the API
 
-Next continue your API implementing the other CRUD operations: `POST`, `PUT` (update) and `DELETE` (**note** PUT requests require a trailing slash!). Make sure you add `404`s (data not there) where applicable.
+Next continue your API implementing the other CRUD operations: `POST`, `PUT` (update) and `DELETE` (**note** `PUT` requests require a trailing slash!). Make sure you add `404`s (data not there) where applicable.
 
 Maybe you want to add some custom validations as well (like the manufacturer `enum` example in the lesson). See the [API Star docs](https://docs.apistar.com/api-guide/type-system/).
 
