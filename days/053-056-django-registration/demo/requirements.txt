@@ -1,2 +1,2 @@
-django==2.2.8
+django==2.2.9
 django-registration==3.0.1
