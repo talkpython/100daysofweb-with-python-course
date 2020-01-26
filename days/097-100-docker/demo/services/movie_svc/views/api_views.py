@@ -40,31 +40,6 @@ def search_director(_, resp, director_name: str):
     resp.media = {'keyword': director_name, 'hits': movies_dicts, 'truncated_results': limited}
 
 
-@api.route("/api/movie/genre/{genre}")
-def movies_by_genre(_, resp: Response, genre: str):
-    hits = db.movies_by_genre(genre)
-    print("Searching for movies by genre {}, {} results".format(genre, len(hits)))
-
-    limited = len(hits) > response_count_max
-    if limited:
-        hits = hits[:response_count_max]
-
-    hits_dicts = [
-        db.movie_to_dict(m)
-        for m in hits
-    ]
-
-    resp.media = {'genre': genre, 'hits': hits_dicts, 'truncated_results': limited}
-
-
-@api.route("/api/movie/{imdb_number}")
-def search_imdb(_, resp, imdb_number: str):
-    movie = db.find_by_imdb(imdb_number)
-    print("Looking up movie by code: {}, found? {}".format(imdb_number, 'Yes' if movie else 'NO'))
-
-    resp.media = db.movie_to_dict(movie)
-
-
 @api.route("/api/movie/top")
 def top_movies(_, resp: Response):
     hits = db.movies_by_popularity()
@@ -83,6 +58,31 @@ def top_movies(_, resp: Response):
     resp.media = {'keyword': keyword, 'hits': hits_dicts, 'truncated_results': limited}
 
 
+@api.route("/api/movie/{imdb_number}")
+def search_imdb(_, resp, imdb_number: str):
+    movie = db.find_by_imdb(imdb_number)
+    print("Looking up movie by code: {}, found? {}".format(imdb_number, 'Yes' if movie else 'NO'))
+
+    resp.media = db.movie_to_dict(movie)
+
+
 @api.route("/api/movie/genre/all")
 def all_genres(_, resp: Response):
     resp.media = db.all_genres()
+
+
+@api.route("/api/movie/genre/{genre}")
+def movies_by_genre(_, resp: Response, genre: str):
+    hits = db.movies_by_genre(genre)
+    print("Searching for movies by genre {}, {} results".format(genre, len(hits)))
+
+    limited = len(hits) > response_count_max
+    if limited:
+        hits = hits[:response_count_max]
+
+    hits_dicts = [
+        db.movie_to_dict(m)
+        for m in hits
+    ]
+
+    resp.media = {'genre': genre, 'hits': hits_dicts, 'truncated_results': limited}
