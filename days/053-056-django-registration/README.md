@@ -20,6 +20,8 @@ You can watch the videos during today and tomorrow (approx. 30 min a day).
 
 Here I left some room to catch up on [Django part 1](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/045-048-django-intro) which was quite dense.
 
+Update 28th of May 2020: I had to add `DEFAULT_FROM_EMAIL` to settings.py (thanks [Iain](https://twitter.com/shutteritch/status/1265408235756040197))
+
 ## Day 3. + 4. - Practice yourself
 
 Check out the starter Quote app from the [last Django lesson](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/045-048-django-intro/demo) and follow along with the steps in my videos.
