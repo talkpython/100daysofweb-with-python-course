@@ -1,16 +1,16 @@
 import sendgrid
-from sendgrid.helpers.mail import Email, Content, Mail
+from sendgrid.helpers.mail import Mail
 
-sg = sendgrid.SendGridAPIClient(apikey='<apikey>')
+sg = sendgrid.SendGridAPIClient(api_key="MY_API_KEY")
 
-from_email = Email("test@example.com")
+from_email = "test@example.com"
 subject = "Winter is coming"
-to_email = Email("<youremail>@<domain>")
-content = Content("text/plain", "So... put on a jumper!")
+to_email = "<youremail>@<domain>"
+content = "So... put on a jumper!"
 
-mail = Mail(from_email, subject, to_email, content)
+mail = Mail(from_email, to_email, subject, content)
 
-response = sg.client.mail.send.post(request_body=mail.get())
+response = sg.send(mail)
 
 print(response.status_code)
 print(response.body)
