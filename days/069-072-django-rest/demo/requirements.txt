@@ -1,5 +1,5 @@
 django==2.2.18
-django-registration==3.0.1
+django-registration==3.1.2
 djangorestframework
 requests
 django-rest-swagger
