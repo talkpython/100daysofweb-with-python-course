@@ -8,5 +8,5 @@ Jinja2>=2.10.1
 MarkupSafe==1.0
 python-dotenv==0.9.1
 requests>=2.21.0
-urllib3==1.24.2
+urllib3==1.26.5
 werkzeug>=0.15.3
