@@ -1,4 +1,4 @@
-django==2.2.22
+django==2.2.24
 django-registration==3.1.2
 djangorestframework
 requests
