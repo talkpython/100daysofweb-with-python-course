@@ -4,13 +4,15 @@ As we have only one day for this miscellaneous topic, watching the videos should
 
 In this lesson we will test [PyBites My Reading List](https://pybitesbooks.com) Django app.
 
-If you want to follow along with my code, consider [creating an account](https://pybitesbooks.com/accounts/register/) and setting your username and password in an `.env` file (make sure you hide this file from version control!).
+If you want to follow along with my code, [create a PyBites Books account](https://pybitesbooks.com/accounts/register/) and set your username and password in an `.env` file:
 
 ```
 $ cp .env-template .env
 
-# set USERNAME and PASSWORD variables to yours
+# Open the .env file and fill out USERNAME and PASSWORD with your new PyBites Books credentials.
 ```
+
+These two env variables get loaded in by the script.
 
 The starter code can be found in the [start subdirectory](start), the final code is [here](final).
 
