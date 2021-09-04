@@ -4,14 +4,17 @@ from time import sleep
 
 import pytest
 
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
+load_dotenv()
+
 USERNAME = os.environ['USERNAME']
 PASSWORD = os.environ['PASSWORD']
 
-HOME = 'https://pbreadinglist.herokuapp.com'
+HOME = 'https://pybitesbooks.com'
 FIRST_BOOK = f'{HOME}/books/nHDtDAAAQBAJ'
 SECOND_BOOK = f'{HOME}/books/NWqePwAACAAJ'
 MY_BOOKS = 'My Books'
@@ -20,33 +23,32 @@ MY_BOOKS = 'My Books'
 
 
 @pytest.fixture
-def driver_home():
+def driver():
     driver = webdriver.Chrome()
-    driver.get(HOME)
-    # pytest's way of tearDown
     yield driver
+    # teardown code
     driver.quit()
 
 
 @pytest.fixture
-def driver_first_book():
-    driver = webdriver.Chrome()
+def driver_home(driver):
+    driver.get(HOME)
+    yield driver
+
+
+@pytest.fixture
+def driver_first_book(driver):
     driver.get(FIRST_BOOK)
     yield driver
-    driver.quit()
 
 
 @pytest.fixture
-def driver_login():
-    driver = webdriver.Chrome()
-
+def driver_login(driver):
     driver.get(HOME)
     driver.find_element_by_link_text('Login').click()
     driver.find_element_by_name('username').send_keys(USERNAME)
     driver.find_element_by_name('password').send_keys(PASSWORD + Keys.RETURN)
-
     yield driver
-    driver.quit()
 
 
 def test_homepage_title(driver_home):

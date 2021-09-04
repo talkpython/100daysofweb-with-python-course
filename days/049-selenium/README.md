@@ -2,14 +2,15 @@
 
 As we have only one day for this miscellaneous topic, watching the videos should suffice.
 
-In this lesson we will test [PyBites My Reading List](https://pbreadinglist.herokuapp.com/) Django app.
+In this lesson we will test [PyBites My Reading List](https://pybitesbooks.com) Django app.
 
-If you want to follow along with my code, consider [creating an account](http://pbreadinglist.herokuapp.com/accounts/register/) and setting your username and password in your virtual environment's activation script:
+If you want to follow along with my code, consider [creating an account](https://pybitesbooks.com/accounts/register/) and setting your username and password in an `.env` file (make sure you hide this file from version control!).
 
-	$ vi venv/bin/activate
-	...
-	export USERNAME='your_user'
-	export PASSWORD='your_password'
+```
+$ cp .env-template .env
+
+# set USERNAME and PASSWORD variables to yours
+```
 
 The starter code can be found in the [start subdirectory](start), the final code is [here](final).
 
