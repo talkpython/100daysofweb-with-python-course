@@ -1,7 +1,7 @@
 import asyncio
 import random
-import time
 from typing import Tuple
+
 import aiohttp
 
 use_cached_data = False
@@ -13,7 +13,10 @@ measured_latency_in_sec = [
 
 async def get_lat_long(zip_code: str, country: str) -> Tuple[float, float]:
     key = f'{zip_code}, {country}'
-    url = f'http://www.datasciencetoolkit.org/street2coordinates/{key.replace(" ", "+")}'
+    # Sadly, datasciencetoolkit.org seems to have gone out of existence.
+    # I set the use cached data = true in the config to keep this section working
+    # But it won't vary by location, sorry.
+    url = f'https://www.datasciencetoolkit.org/street2coordinates/{key.replace(" ", "+")}'
 
     if use_cached_data:
         await asyncio.sleep(random.choice(measured_latency_in_sec))
