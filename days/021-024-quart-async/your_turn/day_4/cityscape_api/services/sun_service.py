@@ -12,6 +12,8 @@ def for_today(latitude: float, longitude: float) -> dict:
     url = f'https://api.sunrise-sunset.org/json?lat={latitude}&lng={longitude}'
 
     if use_cached_data:  # Set in config/dev.json or config/prod.json
+        # TODO: Convert this to await asyncio.sleep()
+
         time.sleep(random.choice(measured_latency_in_sec))
         return {'sunrise': '06:04:09 AM', 'sunset': '08:28:48 PM', 'solar_noon': '01:16:28 PM',
                 'day_length': '14:24:39', 'civil_twilight_begin': '05:31:10 AM', 'civil_twilight_end': '09:01:47 PM',
