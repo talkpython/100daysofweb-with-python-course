@@ -1,6 +1,9 @@
 import quart
 
-blueprint = quart.blueprints.Blueprint(__name__, __name__)
+# Post video edit ****************************************
+# Flask 2.0+ started raising an error on Blueprint(__name__, __name__)
+# ValueError: 'name' may not contain a dot '.' character.
+blueprint = quart.blueprints.Blueprint(__name__.replace('.', '_'), __name__)
 
 
 @blueprint.route('/')
