@@ -1,5 +1,6 @@
 import requests
 
+# TODO: Set your api.openweathermap.org API key here:
 __api_key = ''
 
 
