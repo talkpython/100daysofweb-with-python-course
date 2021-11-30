@@ -1,7 +1,7 @@
 import flask
 from services import weather_service, sun_service, location_service
 
-blueprint = flask.blueprints.Blueprint(__name__, __name__)
+blueprint = flask.blueprints.Blueprint(__name__.replace('.', '_'), __name__)
 
 
 @blueprint.route('/api/events/<city>/<state>/<country>', methods=['GET'])
