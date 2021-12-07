@@ -10,7 +10,7 @@ The first half of this 4-day block is to watch the videos and study SQLAlchemy. 
 
 For this day, you will pick a database project from the following list of ideas. 
 
-**[top-18-database-projects-ideas](https://www.lovelycoding.org/2013/11/top-18-database-projects-ideas-for.engineering-bca-mca-btech-bsc.html)**
+**[top-18-database-projects-ideas](https://web.archive.org/web/20200922100027/https://www.lovelycoding.org/2013/11/top-18-database-projects-ideas-for.engineering-bca-mca-btech-bsc.html)** (recently taken offline so here's the archive.org version)
 
 This web page lists 18 different data modeling and database projects. Rather than us asking you do to one particular topic, you get to choose the one that resonates with you most. 
 
