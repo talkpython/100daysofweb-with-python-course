@@ -52,7 +52,7 @@ async with aiohttp.ClientSession() as session:
 
 Finally, you'll need to do step 3 above, run this in an async event loop. Update the `main()` method using two features built into Python to make this work:
 
-* `asyncio.get_event_loop()`
+* `asyncio.new_event_loop()`
 * `loop.run_until_complete()`
 
 Run your async version. Sadly, it will run the same speed as before because although it's async, we are waiting to do the next step and doing nothing really in parallel. 
