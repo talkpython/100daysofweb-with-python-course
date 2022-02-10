@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.2",
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
     "vue": "^2.6.6"
