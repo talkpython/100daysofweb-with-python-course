@@ -10,11 +10,11 @@ The watch the videos and keep track of where you might want to grab some example
 
 Today you get to play with CSS selectors. These are incredibly important because the way you target elements in CSS files are by specifying the selectors.
 
-Open the selector section of our demo app (from the videos). It's located adjacent to this foyer:
+Open the selector section of our demo app (from the videos). It's located adjacent to this folder:
 
 `013-016-css-basics/demos/selectorville/selectors.html`
 
-Remember that you can just open that file directory from your hard drive.
+Remember that you can just open that file directly from your hard drive.
 
 Use the "What can I use" dialog to find some interesting things to query and highlight. Look at the source code of the HTML file to find other interesting CSS selectors to run as well.
 
