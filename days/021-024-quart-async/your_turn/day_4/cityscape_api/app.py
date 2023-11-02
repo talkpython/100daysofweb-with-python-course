@@ -5,8 +5,9 @@ from config import settings
 import services.weather_service
 import services.sun_service
 import services.location_service
+import quart
 
-app = flask.Flask(__name__)
+app = quart.Quart(__name__)
 is_debug = False
 
 app.register_blueprint(home.blueprint)
