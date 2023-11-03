@@ -1,8 +1,7 @@
 import requests
 import aiohttp
 
-# TODO: Set your api.openweathermap.org API key here:
-__api_key = '59f94b2bbf28e1a7dfdaa2086e1a4722'
+__api_key = ''
 
 
 def global_init(api_key: str):
