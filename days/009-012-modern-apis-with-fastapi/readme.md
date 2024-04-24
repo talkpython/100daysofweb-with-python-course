@@ -1,4 +1,4 @@
-# Days 09-12 Building APIs with Api Star (0.5.41)
+# Days 09-12 Building APIs with FastAPI
 
 **Important**: at the time of recording the newest version of `apistar` was `0.5.41`, which let you build complete APIs. 
 

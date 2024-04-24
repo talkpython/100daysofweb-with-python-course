@@ -1,2 +1,0 @@
-apistar==0.5.41
-pytest
