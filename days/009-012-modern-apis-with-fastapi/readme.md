@@ -47,7 +47,7 @@ The above api endpoint `some_action` is fun, but takes no data. If we wanted to 
 def some_action(start_index):
 ```
 
-But this is a string and index implies an integer. We could cast it ourselves, but FastAPI does that for us with validation by simply specifying the type in code, some_action(start_index**: int**):
+But this is a string and index implies an integer. We could cast it ourselves, but FastAPI does that for us with validation by simply specifying the type in code, some_action(start_index: **int**):
 
 ```python
 @api.get('/{start_index}')
