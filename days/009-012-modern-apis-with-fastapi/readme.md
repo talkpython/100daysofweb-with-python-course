@@ -1,42 +1,91 @@
 # Days 09-12 Building APIs with FastAPI
 
-**Important**: at the time of recording the newest version of `apistar` was `0.5.41`, which let you build complete APIs. 
-
-If you look at the [project docs](https://docs.apistar.com) today though, you'll see the following note:
-
-> _Where did the server go?_ With version 0.6 onwards the API Star project is being focused as a framework-agnositic suite of API tooling. The plan is to build out this functionality in a way that makes it appropriate for use either as a stand-alone tool, or together with a large range of frameworks. The 0.5 branch remains available on GitHub, and can be installed from PyPI with `pip install apistar==0.5.41`.
-
-For this reason and in order for the demo project to work we pinned it to version `0.5.41`.
+This exercise section is going to have you laughing, no doubt. You're going to use FastAPI to create an API that will return a random programming-related joke.
 
 ---
 
-## Day 1-2: Watch the video lessons
+## Days 1-3: Watch the video lessons
 
-The first half of this 4-day block is to watch the videos and study API Star. Consider downloading and trying out the code samples developed during the course.
+The first segment of this 4-day block is to watch the videos and study FastAPI. Consider downloading and trying out the [code sample developed during the course](https://github.com/talkpython/100daysofweb-with-python-course/tree/master/days/009-012-modern-apis-with-fastapi/demo).
 
-## Day 3: Make your own API
+## Day 4: Funny Business
 
-Now you have seen the videos from this chapter, you're ready to build an API using API Star!
+Now you have seen the videos from this chapter, you're ready to build an API using FastAPI!
 
-For this day, you will get a data set from [Mockaroo](https://mockaroo.com/) or any other resource and load it in a sensible data structure (in the demo I used a `list` of `dict`s).
+We are going to use the [pyjokes](https://pyjok.es) package. This is usually marketed as a CLI tool to get a joke in your terminal. But it also [has an API](https://pyjok.es/api/). It's this API that we can use to build a joke API.
 
-Data is everywhere, but if you don't get inspiration maybe you can use this [Marvel dataset](https://raw.githubusercontent.com/pybites/marvel_challenge/master/marvel-wikia-data.csv) we used for one of our code challenges. If you don't know how to parse CSV, no worries: the same repo [has code for this](https://github.com/pybites/marvel_challenge/blob/solution/marvel.py).
+###  Foundations
 
-Next make a virtual env, activate it and `pip install apistar==0.5.41` as shown in the videos (of course you can also use `pipenv` or `Anaconda`).
+Before we talk about the details of your journey, let me give you a couple of foundational concepts from FastAPI so that you don't need to search the web *too* much (programming always involves some searching or AI-asking).
 
-Then start to build your API using the skeleton from my demo. Try to implement the `GET` endpoint today (both all items and single item).
+**FastAPI Starter Structure**
 
-## Day 4: Flesh out (and test) the API
+Simple FastAPI apps usually look something like this:
 
-Next continue your API implementing the other CRUD operations: `POST`, `PUT` (update) and `DELETE` (**note** `PUT` requests require a trailing slash!). Make sure you add `404`s (data not there) where applicable.
+```python
+import fastapi
+import uvicorn
 
-Maybe you want to add some custom validations as well (like the manufacturer `enum` example in the lesson). See the [API Star docs](https://docs.apistar.com/type-system/).
+api = fastapi.FastAPI()
 
-Install [Postman](https://www.getpostman.com/) and run the different methods against various endpoints, do they all return the expected data and status codes?
+@api.get('/')
+def some_action():
+  return {"message": "Hello"}
 
-If you have time left try to write some tests to automate the previous step. I recommend using `pytest` but that is not required. You probably do want to use [Api Star's TestClient](https://github.com/encode/apistar/blob/version-0.5.x/docs/api-guide/testing.md) for convenience (*note* this works for the version we are using in this lesson = 0.5, [starting 0.6 it's deprecated](https://docs.apistar.com/#where-did-the-server-go)).
+if __name__ == '__main__':
+	uvicorn.run(api, port=8001, host="127.0.0.1")
+```
 
-Good luck and remember: _the learning is in the practice_.
+Incredible how simple these web apps are these days in their bare form.
+
+**Passing data to actions**
+
+The above api endpoint `some_action` is fun, but takes no data. If we wanted to pass a number, say `start_index`, we could do it like this using the `{}` wrappers in the URL:
+
+```python
+@api.get('/{start_index}')
+def some_action(start_index):
+```
+
+But this is a string and index implies an integer. We could cast it ourselves, but FastAPI does that for us with validation by simply specifying the type in code, some_action(start_index**: int**):
+
+```python
+@api.get('/{start_index}')
+def some_action(start_index: int):
+```
+
+**Constrained enums and string values**
+
+Finally, in this exercise, you'll work with a small set of valid string values. For example, the pyjokes methods take a `category` of **neutral**, **all**, or **chuck** (as in Norris). We can express that way better with an enum (StrEnum specifically). Note: This type is only available in Python 3.11 or higher.
+
+```python
+class JokeCategory(enum.StrEnum):
+    all = 'all'
+    chuck_norris = 'chuck'
+    neutral = 'neutral'
+```
+
+It's preferable to use this as the type in FastAPI because FastAPI will automatically reject all inputs that are not one of those three string values.
+
+### Your Joke API
+
+Use what we've given you above along with `pyjokes`, which you'll need to install as a dependency along with fastapi and uvicorn, to build a FastAPI that will listen at then URL:
+
+`http://127.0.0.1:8001/api/laugh/chuck/en`
+
+And pass in both the category and language (again see [the pyjokes API](https://pyjok.es/api/) for how to use it and valid inputs).
+
+The response should be a JSON value such as:
+
+```json
+{
+  "category": "chuck",
+  "language": "en",
+  "joke": "Every SQL statement that Chuck Norris codes has an implicit 'COMMIT' in its end."
+}
+```
+
+Be creative, explore and have fun. Remember: _the learning is in the practice_.
 
 ### Time to share what you've accomplished!
 
