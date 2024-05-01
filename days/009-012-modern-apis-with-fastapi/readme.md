@@ -47,7 +47,7 @@ The above api endpoint `some_action` is fun, but takes no data. If we wanted to 
 def some_action(start_index):
 ```
 
-But this is a string and index implies an integer. We could cast it ourselves, but FastAPI does that for us with validation by simply specifying the type in code, some_action(start_index: **int**):
+But this is a string and index implies an integer. We could parse it ourselves, but FastAPI does that for us with validation by simply specifying the type in code, some_action(start_index: **int**):
 
 ```python
 @api.get('/{start_index}')
@@ -69,11 +69,13 @@ It's preferable to use this as the type in FastAPI because FastAPI will automati
 
 ### Your Joke API
 
-Use what we've given you above along with `pyjokes`, which you'll need to install as a dependency along with fastapi and uvicorn, to build a FastAPI that will listen at then URL:
+Use what we've given you above along with `pyjokes`, which you'll need to install as a dependency along with fastapi and uvicorn, to build a FastAPI that will listen at the URLs:
 
-`http://127.0.0.1:8001/api/laugh/chuck/en`
+- `http://127.0.0.1:8001/api/laugh/chuck/en`
+- `http://127.0.0.1:8001/api/laugh/neutral/en`
+- `http://127.0.0.1:8001/api/laugh/chuck/es`
 
-And pass in both the category and language (again see [the pyjokes API](https://pyjok.es/api/) for how to use it and valid inputs).
+Passing in both the category and language (again see [the pyjokes API](https://pyjok.es/api/) for how to use it and valid inputs).
 
 The response should be a JSON value such as:
 
