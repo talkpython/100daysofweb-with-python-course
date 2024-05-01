@@ -33,7 +33,7 @@ def some_action():
   return {"message": "Hello"}
 
 if __name__ == '__main__':
-	uvicorn.run(api, port=8001, host="127.0.0.1")
+  uvicorn.run(api, port=8001, host="127.0.0.1")
 ```
 
 Incredible how simple these web apps are these days in their bare form.
